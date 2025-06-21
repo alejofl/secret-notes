@@ -1,0 +1,21 @@
+{
+  "name": "@alejofl/secret-notes",
+  "version": "0.1.0",
+  "description": "A secure note-taking webapp for storing encrypted notes and retrieving them using a passphrase.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git++https://github.com/alejofl/secret-notes.git"
+  },
+  "author": "Alejo Flores Lucey <alejo@misterflores.com> (https://alejofl.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejofl/secret-notes/issues"
+  },
+  "homepage": "https://github.com/alejofl/secret-notes#readme",
+  "workspaces": [
+    "backend"
+  ]
+}

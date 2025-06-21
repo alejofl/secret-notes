@@ -1,0 +1,18 @@
+{
+  "name": "@alejofl/secure-notes-backend",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "dotenv -e .env -- tsc -p tsconfig.json",
+    "start": "dotenv -e .env -- node dist/index.js",
+    "dev": "dotenv -e .env.local -- nodemon src/index.ts"
+  },
+  "dependencies": {
+    "fastify": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "dotenv-cli": "^8.0.0",
+    "nodemon": "^3.1.10",
+    "typescript": "^5.8.3"
+  }
+}
