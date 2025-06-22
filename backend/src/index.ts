@@ -50,7 +50,6 @@ server.post("/notes", async (request, reply) => {
     if (!title || !text || !passphrase) {
         return reply.status(400).send({ error: "Missing title, text or passphrase" });
     }
-    console.log(title, text, passphrase);
 
     const encrypted = encrypt(text, passphrase);
     await prisma.note.create({
