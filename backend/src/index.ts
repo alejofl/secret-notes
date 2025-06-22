@@ -1,9 +1,12 @@
+import { PrismaClient } from "@prisma/client"
 import fastify from "fastify"
 
 const server = fastify()
+const prisma = new PrismaClient()
 
 server.get("/ping", async (request, reply) => {
-    return "pong\n"
+    const notes = await prisma.note.findMany()
+    return { notes }
 })
 
 server.listen({

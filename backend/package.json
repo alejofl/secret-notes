@@ -4,15 +4,24 @@
   "scripts": {
     "build": "dotenv -e .env -- tsc -p tsconfig.json",
     "start": "dotenv -e .env -- node dist/index.js",
-    "dev": "dotenv -e .env.local -- nodemon src/index.ts"
+    "dev": "dotenv -e .env.local -- nodemon src/index.ts",
+    "prisma:generate": "dotenv -e .env -- npx prisma generate",
+    "prisma:migrate": "dotenv -e .env -- npx prisma migrate deploy",
+    "dev:prisma:generate": "dotenv -e .env.local -- npx prisma generate",
+    "dev:prisma:migrate": "dotenv -e .env.local -- npx prisma migrate dev"
+  },
+  "prisma": {
+    "schema": "./src/database/prisma/schema.prisma"
   },
   "dependencies": {
+    "@prisma/client": "^6.10.1",
     "fastify": "^5.4.0"
   },
   "devDependencies": {
     "@types/node": "^24.0.3",
     "dotenv-cli": "^8.0.0",
     "nodemon": "^3.1.10",
+    "prisma": "^6.10.1",
     "typescript": "^5.8.3"
   }
 }

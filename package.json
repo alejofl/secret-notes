@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "A secure note-taking webapp for storing encrypted notes and retrieving them using a passphrase.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:db:up": "docker compose -f compose.dev.yaml --env-file backend/.env.local up -d",
+    "dev:db:down": "docker compose -f compose.dev.yaml --env-file backend/.env.local down",
+    "dev:db:remove": "docker compose -f compose.dev.yaml --env-file backend/.env.local down -v"
   },
   "repository": {
     "type": "git",

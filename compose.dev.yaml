@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    env_file: "./backend/.env.local"
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT_BINDING}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}", "-d", "${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
