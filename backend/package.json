@@ -1,5 +1,6 @@
 {
-  "name": "@alejofl/secure-notes-backend",
+  "name": "@alejofl/secret-notes-backend",
+  "private": true,
   "version": "0.1.0",
   "scripts": {
     "build": "dotenv -e .env -- tsc -p tsconfig.json",

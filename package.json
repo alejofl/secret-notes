@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/alejofl/secret-notes#readme",
   "workspaces": [
-    "backend"
+    "backend",
+    "frontend"
   ]
 }
