@@ -1,7 +1,11 @@
 import { AxiosApi } from "@/api/base";
-import type { NoteInfo } from "@/types";
+import { mapNoteInfo, type ApiNoteInfo } from "./map-note";
 
-export const getNotesQueryKey = (orderBy: string = "title", ascending: boolean = true) => ["notes", orderBy, ascending];
+export const getNotesQueryKey = (orderBy?: string, ascending?: boolean) => [
+    "notes",
+    ...(orderBy !== undefined ? [orderBy] : []),
+    ...(ascending !== undefined ? [ascending] : []),
+];
 
 export const getNotesQueryOptions = (orderBy: string = "title", ascending: boolean = true) => ({
     queryKey: getNotesQueryKey(orderBy, ascending),
@@ -11,10 +15,11 @@ export const getNotesQueryOptions = (orderBy: string = "title", ascending: boole
 })
 
 async function getNotes(orderBy: string = "title", ascending: boolean = true) {
-    return (await AxiosApi.get<NoteInfo[]>(
+    const response = await AxiosApi.get<ApiNoteInfo[]>(
         "/notes",
         {
             params: { orderBy, ascending }
         }
-    )).data;
+    );
+    return response.data.map(mapNoteInfo);
 }

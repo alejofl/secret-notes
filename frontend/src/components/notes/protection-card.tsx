@@ -1,19 +1,20 @@
 import { Eye, EyeOff, LockKeyhole } from "lucide-react";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader } from "../ui/card";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { cn } from "@/utils/ui";
 
 type Props = {
     passphrase: string;
     setPassphrase: (value: string) => void;
-    error?: string;
+    isError?: boolean;
     isLoading?: boolean;
     onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-export function ProtectionCard({ passphrase, setPassphrase, error, isLoading, onSubmit }: Props) {
+export function ProtectionCard({ passphrase, setPassphrase, isError, isLoading, onSubmit }: Props) {
     const [showPassword, setShowPassword] = useState(false)
 
     return (
@@ -36,7 +37,7 @@ export function ProtectionCard({ passphrase, setPassphrase, error, isLoading, on
                                 value={passphrase}
                                 onChange={(e) => setPassphrase(e.target.value)}
                                 placeholder="Enter passphrase"
-                                className="pr-10"
+                                className={cn("pr-10", isError && "border-destructive")}
                                 required
                             />
                             <Button
@@ -54,7 +55,7 @@ export function ProtectionCard({ passphrase, setPassphrase, error, isLoading, on
                             </Button>
                         </div>
                     </div>
-                    {error && <p className="text-sm text-destructive">{error}</p>}
+                    {isError && <p className="text-sm text-destructive">Something went wrong! Check your passphrase.</p>}
                     <Button type="submit" className="w-full" disabled={isLoading}>
                         {isLoading ? "Verifying..." : "Access Note"}
                     </Button>
