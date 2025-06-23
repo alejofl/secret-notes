@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { routeTree } from "./route-tree.gen"
 
 import "./styles.css"
+import "./github-markdown.css"
 
 const queryClient = new QueryClient()
 
