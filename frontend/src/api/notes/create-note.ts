@@ -4,7 +4,7 @@ import { AxiosApi } from "@/api/base";
 export const createNoteSchema = z.object({
     title: z.string().min(1),
     text: z.string().min(1),
-    passphrase: z.string().min(1),
+    passphrase: z.string().min(8),
 });
 
 export type CreateNoteSchemaType = z.infer<typeof createNoteSchema>;

@@ -3,8 +3,8 @@ import { mapNoteInfo, type ApiNoteInfo } from "./map-note";
 
 export const getNotesQueryKey = (orderBy?: string, ascending?: boolean) => [
     "notes",
-    ...(orderBy !== undefined ? [orderBy] : []),
-    ...(ascending !== undefined ? [ascending] : []),
+    ...(orderBy !== undefined ? [{ orderBy }] : []),
+    ...(ascending !== undefined ? [{ ascending }] : []),
 ];
 
 export const getNotesQueryOptions = (orderBy: string = "title", ascending: boolean = true) => ({

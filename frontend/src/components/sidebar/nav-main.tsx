@@ -15,7 +15,7 @@ export function NavMain() {
 
     useEffect(() => {
         setFilteredNotes(notes);
-    }, [orderBy, ascending]);
+    }, [notes, orderBy, ascending]);
 
     return <>
         <SidebarGroup>
@@ -65,7 +65,7 @@ export function NavMain() {
             </SidebarGroupContent>
             <SidebarMenu>
                 {filteredNotes.map((item) => (
-                    <SidebarMenuItem>
+                    <SidebarMenuItem key={item.id}>
                         <SidebarMenuButton asChild>
                             <Link to="/$noteId" params={{ noteId: item.id }} activeProps={{ className: "bg-sidebar-accent text-sidebar-accent-foreground font-medium" }}>
                                 <span>{item.title}</span>
