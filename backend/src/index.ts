@@ -1,9 +1,15 @@
 import { PrismaClient } from "@prisma/client"
 import fastify from "fastify"
+import cors from '@fastify/cors'
 import { decrypt, encrypt } from "./services/crypto";
 
 const server = fastify()
 const prisma = new PrismaClient()
+
+server.register(cors, {
+    origin: "*",
+    methods: ["GET", "POST"],
+});
 
 server.get("/notes", async (request, reply) => {
     const { orderBy = "title", ascending = true } = request.query as { orderBy?: string, ascending?: boolean };

@@ -1,3 +1,4 @@
+import { getNotesQueryOptions } from '@/api/notes/get-notes'
 import { AppSidebar } from '@/components/sidebar'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 import { Toaster } from '@/components/ui/sonner'
@@ -7,6 +8,9 @@ import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
 export const Route = createRootRouteWithContext<{
     queryClient: QueryClient
 }>()({
+    loader: async ({ context: { queryClient } }) => {
+        return queryClient.ensureQueryData(getNotesQueryOptions());
+    },
     component: RouteComponent
 })
 
