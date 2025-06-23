@@ -12,10 +12,11 @@ server.register(cors, {
 });
 
 server.get("/notes", async (request, reply) => {
-    const { orderBy = "title", ascending = true } = request.query as { orderBy?: string, ascending?: boolean };
+    let { orderBy = "title", ascending = "true" } = request.query as { orderBy?: string, ascending?: boolean };
     if (!["title", "createdAt"].includes(orderBy)) {
         return reply.status(400).send({ error: "Invalid orderBy parameter" });
     }
+    ascending = ascending === "true" || ascending === "1";
 
     const notes = await prisma.note.findMany({
         select: {
