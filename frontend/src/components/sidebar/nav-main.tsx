@@ -2,7 +2,7 @@ import { SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabe
 import { Link } from "@tanstack/react-router";
 import { Label } from "@/components/ui/label";
 import { ArrowDownAZ, ArrowUpAZ, ListFilter, Search } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { getNotesQueryOptions } from "@/api/notes/get-notes";
@@ -12,6 +12,10 @@ export function NavMain() {
     const [orderBy, setOrderBy] = useState("title");
     const { data: notes } = useSuspenseQuery(getNotesQueryOptions(orderBy, ascending))
     const [filteredNotes, setFilteredNotes] = useState(notes);
+
+    useEffect(() => {
+        setFilteredNotes(notes);
+    }, [orderBy, ascending]);
 
     return <>
         <SidebarGroup>
