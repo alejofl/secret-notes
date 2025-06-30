@@ -1,15 +1,28 @@
+import { checkNoteExistance } from "@/api/notes/check-note-existance";
 import { getNoteQueryOptions } from "@/api/notes/get-note";
+import { NotFound } from "@/components/not-found";
 import { ProtectionCard } from "@/components/notes/protection-card";
 import { useQuery } from "@tanstack/react-query";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { Calendar } from "lucide-react";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown"
 import remarkGfm from 'remark-gfm'
 
-
 export const Route = createFileRoute("/$noteId")({
+    loader: async ({ params }) => {
+        const { noteId } = params;
+        try {
+            const exists = await checkNoteExistance(noteId);
+            if (!exists) {
+                throw new Error("Note does not exist");
+            }
+        } catch (e) {
+            throw notFound();
+        }
+    },
     component: RouteComponent,
+    notFoundComponent: NotFound
 });
 
 function RouteComponent() {

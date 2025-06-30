@@ -1,4 +1,5 @@
 import { getNotesQueryOptions } from '@/api/notes/get-notes'
+import { Error } from '@/components/error'
 import { AppSidebar } from '@/components/sidebar'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 import { Toaster } from '@/components/ui/sonner'
@@ -11,7 +12,8 @@ export const Route = createRootRouteWithContext<{
     loader: async ({ context: { queryClient } }) => {
         return queryClient.ensureQueryData(getNotesQueryOptions());
     },
-    component: RouteComponent
+    component: RouteComponent,
+    errorComponent: Error
 })
 
 function RouteComponent() {
