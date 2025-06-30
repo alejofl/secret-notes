@@ -10,6 +10,7 @@ server.register(cors, {
     origin: "*",
     methods: ["GET", "POST"],
 });
+const CHECK_EXISTANCE_MEDIA_TYPE = "application/vnd.secret-notes.check-existance+json";
 
 server.get("/notes", async (request, reply) => {
     let { orderBy = "title", ascending = "true" } = request.query as { orderBy?: string, ascending?: boolean };
@@ -35,6 +36,15 @@ server.get("/notes", async (request, reply) => {
 server.get("/notes/:id", async (request, reply) => {
     const { id } = request.params as { id: string };
     const { passphrase } = request.query as { passphrase?: string };
+    const { accept } = request.headers as { accept?: string };
+
+    if (accept === CHECK_EXISTANCE_MEDIA_TYPE) {
+        const exists = await prisma.note.findUnique({
+            where: { id },
+        });
+        return reply.status(exists ? 204 : 404).send();
+    }
+
     if (!id || !passphrase) {
         return reply.status(400).send({ error: "Missing id or passphrase" });
     }
