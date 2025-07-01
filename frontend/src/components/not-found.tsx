@@ -14,7 +14,12 @@ export function NotFound() {
                 <CardContent className="pt-6">
                     <div className="text-center space-y-6">
                         <div className="space-y-2">
-                            <h2 className="text-2xl font-semibold">Page Not Found</h2>
+                            <h2
+                                className="text-2xl font-semibold"
+                                data-testid="not-found-title"
+                            >
+                                Page Not Found
+                            </h2>
                             <p className="text-muted-foreground">
                                 Sorry, we couldn't find the page you're looking for. It might have been moved, deleted, or you entered
                                 the wrong URL.
@@ -22,14 +27,23 @@ export function NotFound() {
                         </div>
 
                         <div className="space-y-3">
-                            <Button asChild className="w-full">
+                            <Button
+                                asChild
+                                className="w-full"
+                                data-testid="go-home-button"
+                            >
                                 <Link to="/">
                                     <Home className="mr-2 h-4 w-4" />
                                     Go Home
                                 </Link>
                             </Button>
 
-                            <Button variant="outline" onClick={goBack} className="w-full bg-transparent">
+                            <Button
+                                variant="outline"
+                                onClick={goBack}
+                                className="w-full bg-transparent"
+                                data-testid="go-back-button"
+                            >
                                 <ArrowLeft className="mr-2 h-4 w-4" />
                                 Go Back
                             </Button>

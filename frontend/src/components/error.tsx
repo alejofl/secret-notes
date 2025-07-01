@@ -12,7 +12,12 @@ export function Error() {
                 <CardContent className="pt-6">
                     <div className="text-center space-y-6">
                         <div className="space-y-2">
-                            <h2 className="text-2xl font-semibold">Something Went Wrong</h2>
+                            <h2
+                                className="text-2xl font-semibold"
+                                data-testid="error-title"
+                            >
+                                Something Went Wrong
+                            </h2>
                             <p className="text-muted-foreground">
                                 Sorry, we couldn't process your request. This might be due to a server error or an issue with your network connection.
                                 Please try again later.
@@ -20,7 +25,11 @@ export function Error() {
                         </div>
 
                         <div className="space-y-3">
-                            <Button onClick={reload} className="w-full">
+                            <Button
+                                onClick={reload}
+                                className="w-full"
+                                data-testid="error-button"
+                            >
                                 <RotateCcw className="mr-2 h-4 w-4" />
                                 Reload Page
                             </Button>

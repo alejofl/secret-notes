@@ -23,11 +23,11 @@ export function ProtectionCard({ passphrase, setPassphrase, isError, isLoading, 
                 <div className="mx-auto size-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                     <LockKeyhole className="size-6 text-primary" />
                 </div>
-                <h1 className="text-2xl font-semibold text-foreground">Protected Note</h1>
-                <p className="text-sm text-muted-foreground">Enter the passphrase to access this note</p>
+                <h1 className="text-2xl font-semibold text-foreground" data-testid="protected-note-title">Protected Note</h1>
+                <p className="text-sm text-muted-foreground" data-testid="protected-note-description">Enter the passphrase to access this note</p>
             </CardHeader>
             <CardContent>
-                <form onSubmit={onSubmit} className="space-y-4">
+                <form onSubmit={onSubmit} className="space-y-4" data-testid="passphrase-form">
                     <div className="space-y-2">
                         <Label htmlFor="passphrase">Passphrase</Label>
                         <div className="relative">
@@ -39,6 +39,7 @@ export function ProtectionCard({ passphrase, setPassphrase, isError, isLoading, 
                                 placeholder="Enter passphrase"
                                 className={cn("pr-10", isError && "border-destructive")}
                                 required
+                                data-testid="passphrase-input"
                             />
                             <Button
                                 type="button"
@@ -46,6 +47,7 @@ export function ProtectionCard({ passphrase, setPassphrase, isError, isLoading, 
                                 size="sm"
                                 className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
                                 onClick={() => setShowPassword(!showPassword)}
+                                data-testid="toggle-passphrase-visibility"
                             >
                                 {showPassword ? (
                                     <EyeOff className="h-4 w-4 text-muted-foreground" />
@@ -55,8 +57,8 @@ export function ProtectionCard({ passphrase, setPassphrase, isError, isLoading, 
                             </Button>
                         </div>
                     </div>
-                    {isError && <p className="text-sm text-destructive">Something went wrong! Check your passphrase.</p>}
-                    <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isError && <p className="text-sm text-destructive" data-testid="passphrase-error">Something went wrong! Check your passphrase.</p>}
+                    <Button type="submit" className="w-full" disabled={isLoading} data-testid="submit-passphrase">
                         {isLoading ? "Verifying..." : "Access Note"}
                     </Button>
                 </form>
