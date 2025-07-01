@@ -6,10 +6,12 @@
     "build": "dotenv -e .env -- tsc -p tsconfig.json",
     "start": "dotenv -e .env -- node dist/index.js",
     "dev": "dotenv -e .env.local -- nodemon src/index.ts",
+    "test": "dotenv -e .env -- jest",
     "prisma:generate": "dotenv -e .env -- npx prisma generate",
     "prisma:migrate": "dotenv -e .env -- npx prisma migrate deploy",
     "dev:prisma:generate": "dotenv -e .env.local -- npx prisma generate",
-    "dev:prisma:migrate": "dotenv -e .env.local -- npx prisma migrate dev"
+    "dev:prisma:migrate": "dotenv -e .env.local -- npx prisma migrate dev",
+    "dev:test": "dotenv -e .env.local -- jest --coverage"
   },
   "prisma": {
     "schema": "./src/database/prisma/schema.prisma"
@@ -20,8 +22,14 @@
     "fastify": "^5.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.27.7",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.0.3",
+    "babel-jest": "^30.0.2",
     "dotenv-cli": "^8.0.0",
+    "jest": "^30.0.3",
     "nodemon": "^3.1.10",
     "prisma": "^6.10.1",
     "typescript": "^5.8.3"
