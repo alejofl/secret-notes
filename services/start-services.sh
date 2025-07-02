@@ -1,0 +1,1 @@
+docker compose -f ./compose.services.yaml --env-file .env up -d
