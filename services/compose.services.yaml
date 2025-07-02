@@ -1,0 +1,8 @@
+services:
+  sonarqube:
+    image: sonarqube:9.9.8-community
+    ports:
+      - "127.0.0.1:${SONARQUBE_PORT_BINDING}:9000"
+    env_file:
+      - .env
+    restart: always
