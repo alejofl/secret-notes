@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    env_file: "./backend/.env"
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT_BINDING}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}", "-d", "${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  migrations:
+    build: ./backend
+    env_file: ./backend/.env
+    command: sh -c "npm run prisma:migrate"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  backend:
+    build: ./backend
+    env_file: ./backend/.env
+    ports:
+      - "127.0.0.1:${BACKEND_PORT_BINDING}:${BACKEND_PORT}"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${BACKEND_PORT}/healthcheck"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

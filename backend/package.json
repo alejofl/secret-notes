@@ -6,7 +6,7 @@
     "build": "dotenv -e .env -- tsc -p tsconfig.json",
     "start": "dotenv -e .env -- node dist/index.js",
     "dev": "dotenv -e .env.local -- nodemon src/index.ts",
-    "test": "dotenv -e .env -- jest",
+    "test": "dotenv -e .env -- jest --coverage",
     "prisma:generate": "dotenv -e .env -- npx prisma generate",
     "prisma:migrate": "dotenv -e .env -- npx prisma migrate deploy",
     "dev:prisma:generate": "dotenv -e .env.local -- npx prisma generate",

@@ -12,6 +12,10 @@ server.register(cors, {
 });
 const CHECK_EXISTANCE_MEDIA_TYPE = "application/vnd.secret-notes.check-existance+json";
 
+server.get("/healthcheck", (request, reply) => {
+    return reply.status(204).send();
+});
+
 server.get("/notes", async (request, reply) => {
     let { orderBy = "title", ascending = "true" } = request.query as { orderBy?: string, ascending?: boolean };
     if (!["title", "createdAt"].includes(orderBy)) {
