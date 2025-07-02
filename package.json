@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A secure note-taking webapp for storing encrypted notes and retrieving them using a passphrase.",
   "scripts": {
-    "start": "docker compose -f compose.yaml --env-file backend/.env up",
+    "start": "docker compose -f compose.yaml --env-file backend/.env --env-file frontend/.env up -d",
     "dev:db:up": "docker compose -f compose.dev.yaml --env-file backend/.env.local up -d",
     "dev:db:down": "docker compose -f compose.dev.yaml --env-file backend/.env.local down",
     "dev:db:remove": "docker compose -f compose.dev.yaml --env-file backend/.env.local down -v"
