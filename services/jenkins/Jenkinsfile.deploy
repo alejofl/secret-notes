@@ -1,3 +1,7 @@
+def app_version = ""
+def frontend_image = null
+def backend_image = null
+
 pipeline {
     agent any
 
@@ -11,10 +15,6 @@ pipeline {
     tools {
         nodejs "node-22"
     }
-
-    def app_version = ""
-    def frontend_image = null
-    def backend_image = null
 
     stages {
         stage('Preparation') {
