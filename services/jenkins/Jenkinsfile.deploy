@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         IMAGE_NAME = "alejofl/secret-notes"
-        SNYK_TOKEN = credentials('snyk-token')
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
     }
 
@@ -16,12 +15,12 @@ pipeline {
             steps {
                 checkout scm
                 script {
-                    APP_VERSION = sh(
+                    app_version = sh(
                         script: "grep '\"version\"' package.json | sed 's/.*\"version\": \"\\(.*\\)\".*/\\1/'",
                         returnStdout: true
                     ).trim()
                 }
-                echo "App Version: ${APP_VERSION}"
+                echo "App Version: ${app_version}"
             }
         }
 
@@ -41,7 +40,7 @@ pipeline {
                     steps {
                         snykSecurity(
                             snykInstallation: 'SnykScanner',
-                            snykTokenId: '${SNYK_TOKEN}',
+                            snykTokenId: 'snyk-token',
                         )
                     }
                 }
