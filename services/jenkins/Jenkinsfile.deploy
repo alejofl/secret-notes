@@ -97,19 +97,29 @@ pipeline {
                 stage('Frontend Delivery') {
                     steps {
                         script {
-                            frontend_image.push("${app_version}")
-                            frontend_image.push("latest")
+                            docker.withRegistry('https://hub.docker.com', 'dockerhub-credentials') {
+                                frontend_image.push("${app_version}")
+                                frontend_image.push("latest")
+                            }
                         }
                     }
                 }
                 stage('Backend Delivery') {
                     steps {
                         script {
-                            backend_image.push("${app_version}")
-                            backend_image.push("latest")
+                            docker.withRegistry('https://hub.docker.com', 'dockerhub-credentials') {
+                                backend_image.push("${app_version}")
+                                backend_image.push("latest")
+                            }
                         }
                     }
                 }
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                sh 'docker image prune -a -f'
             }
         }
     }
