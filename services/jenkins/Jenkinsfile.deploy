@@ -15,10 +15,12 @@ pipeline {
         stage('Preparation') {
             steps {
                 checkout scm
-                APP_VERSION = sh(
-                    script: "grep '\"version\"' package.json | sed 's/.*\"version\": \"\\(.*\\)\".*/\\1/'",
-                    returnStdout: true
-                ).trim()
+                script {
+                    APP_VERSION = sh(
+                        script: "grep '\"version\"' package.json | sed 's/.*\"version\": \"\\(.*\\)\".*/\\1/'",
+                        returnStdout: true
+                    ).trim()
+                }
                 echo "App Version: ${APP_VERSION}"
             }
         }
@@ -27,9 +29,11 @@ pipeline {
             parallel {
                 stage('Static Code Analysis (SonarQube)') {
                     steps {
-                        scannerHome = tool 'SonarScanner';
-                        withSonarQubeEnv('SonarScanner') {
-                            sh "${scannerHome}/bin/sonar-scanner"
+                        script {
+                            def scannerHome = tool 'SonarScanner';
+                            withSonarQubeEnv('SonarScanner') {
+                                sh "${scannerHome}/bin/sonar-scanner"
+                            }
                         }
                     }
                 }
