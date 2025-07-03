@@ -1,0 +1,60 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "alejofl/secret-notes"
+        SNYK_TOKEN = credentials('snyk-token')
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+    }
+
+    tools {
+        nodejs "node-22"
+    }
+
+    stages {
+        stage('Preparation') {
+            checkout scm
+            env.APP_VERSION = sh(
+                script: "grep '\"version\"' package.json | sed 's/.*\"version\": \"\\(.*\\)\".*/\\1/'",
+                returnStdout: true
+            ).trim()
+            echo "App Version: ${env.APP_VERSION}"
+        }
+
+        stage('Linting') {
+            parallel {
+                stage('Static Code Analysis (SonarQube)') {
+                    steps {
+                        def scannerHome = tool 'SonarScanner';
+                        withSonarQubeEnv() {
+                            sh "${scannerHome}/bin/sonar-scanner"
+                        }
+                    }
+                }
+                stage('Security Scan (Snyk)') {
+                    steps {
+                        snykSecurity(
+                            snykInstallation: 'SnykScanner',
+                            snykTokenId: '${SNYK_TOKEN}',
+                        )
+                    }
+                }
+            }
+        }
+
+        stage('Unit Testing') {
+            parallel {
+                stage('Backend Unit Testing') {
+                    steps {
+                       sh 'cd backend && npm install && npm run test && cd ..'
+                    }
+                }
+                stage('Frontend Unit Testing') {
+                    steps {
+                       sh 'cd frontend && npm install && npm run test && cd ..'
+                    }
+                }
+            }
+        }
+    }
+}
