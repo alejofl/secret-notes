@@ -15,11 +15,11 @@ pipeline {
         stage('Preparation') {
             steps {
                 checkout scm
-                env.APP_VERSION = sh(
+                APP_VERSION = sh(
                     script: "grep '\"version\"' package.json | sed 's/.*\"version\": \"\\(.*\\)\".*/\\1/'",
                     returnStdout: true
                 ).trim()
-                echo "App Version: ${env.APP_VERSION}"
+                echo "App Version: ${APP_VERSION}"
             }
         }
 
@@ -27,8 +27,8 @@ pipeline {
             parallel {
                 stage('Static Code Analysis (SonarQube)') {
                     steps {
-                        def scannerHome = tool 'SonarScanner';
-                        withSonarQubeEnv() {
+                        scannerHome = tool 'SonarScanner';
+                        withSonarQubeEnv('SonarScanner') {
                             sh "${scannerHome}/bin/sonar-scanner"
                         }
                     }
