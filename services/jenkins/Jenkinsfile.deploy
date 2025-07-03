@@ -97,7 +97,7 @@ pipeline {
                 stage('Frontend Delivery') {
                     steps {
                         script {
-                            docker.withRegistry('https://hub.docker.com', 'dockerhub-credentials') {
+                            docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
                                 frontend_image.push("${app_version}")
                                 frontend_image.push("latest")
                             }
@@ -107,7 +107,7 @@ pipeline {
                 stage('Backend Delivery') {
                     steps {
                         script {
-                            docker.withRegistry('https://hub.docker.com', 'dockerhub-credentials') {
+                            docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
                                 backend_image.push("${app_version}")
                                 backend_image.push("latest")
                             }
