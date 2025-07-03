@@ -12,12 +12,16 @@ pipeline {
         nodejs "node-22"
     }
 
+    def app_version = ""
+    def frontend_image = null
+    def backend_image = null
+
     stages {
         stage('Preparation') {
             steps {
                 checkout scm
                 script {
-                    def app_version = sh(
+                    app_version = sh(
                         script: "grep '\"version\"' package.json | sed 's/.*\"version\": \"\\(.*\\)\".*/\\1/'",
                         returnStdout: true
                     ).trim()
@@ -74,14 +78,14 @@ pipeline {
                                 "VITE_PUBLIC_POSTHOG_KEY=${env.VITE_PUBLIC_POSTHOG_KEY}",
                                 "VITE_PUBLIC_POSTHOG_HOST=${env.VITE_PUBLIC_POSTHOG_HOST}",
                             ]
-                            def frontend_image = docker.build("${env.IMAGE_NAME}-frontend:latest", "--build-arg ${build_args.join(' --build-arg ')} frontend")
+                            frontend_image = docker.build("${env.IMAGE_NAME}-frontend:latest", "--build-arg ${build_args.join(' --build-arg ')} frontend")
                         }
                     }
                 }
                 stage('Backend Build') {
                     steps {
                         script {
-                            def backend_image = docker.build("${env.IMAGE_NAME}-backend:latest", "backend")
+                            backend_image = docker.build("${env.IMAGE_NAME}-backend:latest", "backend")
                         }
                     }
                 }
