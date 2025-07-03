@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         IMAGE_NAME = "alejofl/secret-notes"
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
     }
 
     tools {
