@@ -17,12 +17,12 @@ else
 fi
 
 # Updating backend container
-docker compose pull backend
+docker compose -f compose.app.yaml --env-file .env pull backend
 docker compose -f compose.app.yaml --env-file .env stop backend
 docker compose -f compose.app.yaml --env-file .env up -d backend
 
 # Starting $INACTIVE_SERVICE container
-docker compose pull $INACTIVE_SERVICE
+docker compose -f compose.app.yaml --env-file .env pull $INACTIVE_SERVICE
 docker compose -f compose.app.yaml --env-file .env up -d $INACTIVE_SERVICE
 
 # Returning the port of the inactive service
