@@ -1,6 +1,9 @@
 def app_version = ""
 def frontend_image = null
 def backend_image = null
+def tests_port = ""
+def remote = [:]
+remote.allowAnyHosts = true
 
 pipeline {
     agent any
@@ -10,6 +13,7 @@ pipeline {
         VITE_API_BASE_URL = credentials('VITE_API_BASE_URL')
         VITE_PUBLIC_POSTHOG_KEY = credentials('VITE_PUBLIC_POSTHOG_KEY')
         VITE_PUBLIC_POSTHOG_HOST = credentials('VITE_PUBLIC_POSTHOG_HOST')
+        REMOTE_HOST = credentials('REMOTE_HOST')
     }
 
     tools {
@@ -112,6 +116,31 @@ pipeline {
                                 backend_image.push("latest")
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    withCredentials([sshUserPrivateKey(credentialsId: 'ssh-key', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'username')]) {
+                        remote.name = env.REMOTE_HOST
+                        remote.host = env.REMOTE_HOST
+                        remote.user = username
+                        remote.identityFile = identity
+                        tests_port = sshCommand remote: remote, command: "./app/start-blue-green.sh"
+                    }
+                }
+                echo "Tests Port: ${tests_port}"
+                echo "Here, we should add the E2E and Performance tests using the tests_port variable."
+                script {
+                    withCredentials([sshUserPrivateKey(credentialsId: 'ssh-key', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'username')]) {
+                        remote.name = env.REMOTE_HOST
+                        remote.host = env.REMOTE_HOST
+                        remote.user = username
+                        remote.identityFile = identity
+                        sshCommand remote: remote, command: "./app/switch-blue-green.sh"
                     }
                 }
             }
