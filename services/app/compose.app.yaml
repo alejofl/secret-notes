@@ -1,0 +1,46 @@
+services:
+  migrations:
+    image: alejfl/secret-notes-backend:latest
+    env_file: .env
+    command: sh -c "npm run prisma:migrate"
+
+  backend:
+    image: alejfl/secret-notes-backend:latest
+    env_file: ./backend/.env
+    ports:
+      - "${BACKEND_PORT_BINDING}:${BACKEND_PORT}"
+    depends_on:
+      migrations:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:${BACKEND_PORT}/healthcheck"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  frontend_blue:
+    image: alejfl/secret-notes-frontend
+    ports:
+      - "5000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend_green:
+    image: alejfl/secret-notes-frontend
+    ports:
+      - "5001:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+  proxy:
+    image: nginx:1.29.0-perl
+    ports:
+      - "80:80"
+    volumes:
+      - ./proxy.conf:/etc/nginx/nginx.conf
+    restart: always
