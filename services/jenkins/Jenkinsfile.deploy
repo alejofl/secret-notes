@@ -129,7 +129,7 @@ pipeline {
                         remote.host = env.REMOTE_HOST
                         remote.user = username
                         remote.identityFile = identity
-                        tests_port = sshCommand remote: remote, command: "./app/start-blue-green.sh"
+                        tests_port = sshCommand remote: remote, command: "cd app && ./start-blue-green.sh"
                     }
                 }
                 echo "Tests Port: ${tests_port}"
@@ -140,7 +140,7 @@ pipeline {
                         remote.host = env.REMOTE_HOST
                         remote.user = username
                         remote.identityFile = identity
-                        sshCommand remote: remote, command: "./app/switch-blue-green.sh"
+                        sshCommand remote: remote, command: "cd app && ./switch-blue-green.sh"
                     }
                 }
             }
