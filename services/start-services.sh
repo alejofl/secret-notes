@@ -1,1 +1,1 @@
-docker compose -f ./compose.services.yaml --env-file .env up -d
+docker compose -f ./compose.sonar.yaml --env-file .env up -d

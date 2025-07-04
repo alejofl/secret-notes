@@ -34,7 +34,7 @@ services:
         condition: service_completed_successfully
     restart: always
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:3000/healthcheck"]
+      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:${BACKEND_PORT}/healthcheck"]
       interval: 5s
       timeout: 5s
       retries: 5
