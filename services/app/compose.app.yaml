@@ -12,7 +12,7 @@ services:
     depends_on:
       migrations:
         condition: service_completed_successfully
-    restart: unless-stopped
+    restart: always
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:${BACKEND_PORT}/healthcheck"]
       interval: 5s
@@ -26,7 +26,7 @@ services:
     depends_on:
       backend:
         condition: service_healthy
-    restart: unless-stopped
+    restart: always
 
   frontend_green:
     image: alejfl/secret-notes-frontend
@@ -35,7 +35,7 @@ services:
     depends_on:
       backend:
         condition: service_healthy
-    restart: unless-stopped
+    restart: always
 
   proxy:
     image: nginx:1.29.0-perl
