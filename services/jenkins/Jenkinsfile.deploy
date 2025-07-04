@@ -73,6 +73,7 @@ pipeline {
         }
 
         stage('Build') {
+            when { branch 'deploy' }
             parallel {
                 stage('Frontend Build') {
                     steps {
@@ -97,6 +98,7 @@ pipeline {
         }
 
         stage('Delivery') {
+            when { branch 'deploy' }
             parallel {
                 stage('Frontend Delivery') {
                     steps {
@@ -122,6 +124,7 @@ pipeline {
         }
 
         stage('Deploy') {
+            when { branch 'deploy' }
             steps {
                 script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'ssh-key', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'username')]) {
@@ -147,6 +150,7 @@ pipeline {
         }
 
         stage('Cleanup') {
+            when { branch 'deploy' }
             steps {
                 sh 'docker image prune -a -f'
             }
