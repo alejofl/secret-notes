@@ -8,7 +8,7 @@
     "dev": "vite",
     "test": "vitest run",
     "e2e": "npx playwright install && npx playwright test",
-    "performance": "docker run --interactive --tty --rm -e TESTS_URL --volume ${PWD}/tests/performance:/tests --workdir /tests grafana/k6 run k6.ts"
+    "performance": "docker run --rm -e TESTS_URL --volume ${PWD}/tests/performance:/tests --workdir /tests grafana/k6 run k6.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
