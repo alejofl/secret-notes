@@ -135,8 +135,8 @@ pipeline {
                         tests_port = sshCommand remote: remote, command: "cd app && ./start-blue-green.sh"
                     }
                 }
-                echo "Tests Port: ${tests_port}"
-                echo "Here, we should add the E2E and Performance tests using the tests_port variable."
+                sh "TESTS_URL='${REMOTE_HOST}:${tests_port}' cd frontend && npm install && npm run e2e && cd .."
+                sh "TESTS_URL='${REMOTE_HOST}:${tests_port}' cd frontend && npm run performance && cd .."
                 script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'ssh-key', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'username')]) {
                         remote.name = env.REMOTE_HOST
