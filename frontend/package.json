@@ -7,7 +7,8 @@
     "build": "vite build && tsc",
     "dev": "vite",
     "test": "vitest run",
-    "e2e": "npx playwright install && npx playwright test"
+    "e2e": "npx playwright install && npx playwright test",
+    "performance": "docker run --interactive --tty --rm -e TESTS_URL --volume ${PWD}/tests/performance:/tests --workdir /tests grafana/k6 run k6.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
@@ -43,12 +44,14 @@
     "@playwright/test": "^1.53.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
+    "@types/k6": "^1.1.0",
     "@types/node": "^24.0.10",
     "@types/qs": "^6.14.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
     "jsdom": "^26.1.0",
+    "k6": "^0.0.0",
     "typescript": "^5.7.2",
     "vite": "^6.1.0",
     "vitest": "^3.2.4"
