@@ -30,6 +30,7 @@ pipeline {
                         returnStdout: true
                     ).trim()
                 }
+                echo "Branch: ${env.BRANCH_NAME}"
                 echo "App Version: ${app_version}"
             }
         }
