@@ -159,7 +159,7 @@ pipeline {
     }
 
     post {
-         changed {
+         always {
             script {
                 if (currentBuild.currentResult == 'FAILURE') { 
                     emailext subject: '$DEFAULT_SUBJECT',
