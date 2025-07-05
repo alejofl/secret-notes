@@ -297,3 +297,8 @@ sketch
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,node,react,jetbrains+all
 
 **/.tanstack
+
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/playwright/.cache/

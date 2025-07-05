@@ -6,7 +6,8 @@
   "scripts": {
     "build": "vite build && tsc",
     "dev": "vite",
-    "test": "vitest run"
+    "test": "vitest run",
+    "e2e": "npx playwright install && npx playwright test"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
@@ -39,6 +40,7 @@
     "zod": "^3.25.67"
   },
   "devDependencies": {
+    "@playwright/test": "^1.53.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@types/node": "^24.0.10",
