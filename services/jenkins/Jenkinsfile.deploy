@@ -31,7 +31,6 @@ pipeline {
                     ).trim()
                 }
                 echo "App Version: ${app_version}"
-                error "TEST ERROR"
             }
         }
 
