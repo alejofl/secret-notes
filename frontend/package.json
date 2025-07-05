@@ -7,7 +7,7 @@
     "build": "vite build && tsc",
     "dev": "vite",
     "test": "vitest run",
-    "e2e": "npx playwright install --with-deps && npx playwright test",
+    "e2e": "npx playwright install && npx playwright test",
     "performance": "docker run --interactive --tty --rm -e TESTS_URL --volume ${PWD}/tests/performance:/tests --workdir /tests grafana/k6 run k6.ts"
   },
   "dependencies": {
