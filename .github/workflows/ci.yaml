@@ -203,6 +203,7 @@ jobs:
         run: |
           cd frontend
           npm install
+          npx playwright install-deps
       
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.9.0
