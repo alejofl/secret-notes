@@ -1,11 +1,17 @@
 import { createContext, useContext, useState } from "react";
-import type { Theme, ThemeProviderState } from "./theme";
+import type { Theme, ThemeColors, ThemeProviderState } from "./theme";
 
 export const DEFAULT_THEME: Theme = { mode: "system", color: "zinc" };
 const initialState: ThemeProviderState = {
     theme: DEFAULT_THEME,
     setTheme: () => null
 };
+
+export const THEME_COLORS: {[key: string]: ThemeColors} = {
+    "control": "zinc",
+    "blue": "blue",
+    "red": "red",
+}
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 

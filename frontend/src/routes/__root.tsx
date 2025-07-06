@@ -3,8 +3,7 @@ import { Error } from '@/components/error'
 import { AppSidebar } from '@/components/sidebar'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 import { Toaster } from '@/components/ui/sonner'
-import type { ThemeColors } from '@/utils/theme/theme'
-import { DEFAULT_THEME, useTheme } from '@/utils/theme/theme-provider'
+import { DEFAULT_THEME, THEME_COLORS, useTheme } from '@/utils/theme/theme-provider'
 import { type QueryClient } from '@tanstack/react-query'
 import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
 import { useFeatureFlagVariantKey } from 'posthog-js/react'
@@ -21,7 +20,7 @@ export const Route = createRootRouteWithContext<{
 })
 
 function RouteComponent() {
-    const themeColor = useFeatureFlagVariantKey("secret-notes-theme") as ThemeColors | undefined;
+    const themeColor = THEME_COLORS[useFeatureFlagVariantKey("secret-notes-theme") as string]
     const { setTheme } = useTheme();
 
     useEffect(() => {
