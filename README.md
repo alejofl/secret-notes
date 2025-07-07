@@ -1,5 +1,7 @@
 # Secret Notes 🔐
 
+[![GitHub Repository](https://img.shields.io/badge/GitHub_Repository-black?style=for-the-badge&logo=github)](https://github.com/alejofl/secret-notes) [![Frontend Docker Image](https://img.shields.io/badge/Frontend_Docker_image-0db7ed?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/repository/docker/alejofl/secret-notes-frontend) [![Backend Docker Image](https://img.shields.io/badge/Backend_Docker_image-0db7ed?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/repository/docker/alejofl/secret-notes-backend)
+
 A secure note-taking web application that stores encrypted notes using symetric encryption with passphrase protection.
 
 ## Table of Contents
