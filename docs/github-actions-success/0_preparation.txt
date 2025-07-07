@@ -1,0 +1,128 @@
+﻿2025-07-06T17:34:40.7653468Z Current runner version: '2.325.0'
+2025-07-06T17:34:40.7687838Z ##[group]Runner Image Provisioner
+2025-07-06T17:34:40.7689087Z Hosted Compute Agent
+2025-07-06T17:34:40.7690084Z Version: 20250620.352
+2025-07-06T17:34:40.7691127Z Commit: f262f3aba23b10ea191b2a62bdee1ca4c3d344da
+2025-07-06T17:34:40.7692544Z Build Date: 2025-06-20T19:27:17Z
+2025-07-06T17:34:40.7693473Z ##[endgroup]
+2025-07-06T17:34:40.7694413Z ##[group]Operating System
+2025-07-06T17:34:40.7695342Z Ubuntu
+2025-07-06T17:34:40.7696121Z 24.04.2
+2025-07-06T17:34:40.7696942Z LTS
+2025-07-06T17:34:40.7697671Z ##[endgroup]
+2025-07-06T17:34:40.7698513Z ##[group]Runner Image
+2025-07-06T17:34:40.7699531Z Image: ubuntu-24.04
+2025-07-06T17:34:40.7700448Z Version: 20250622.1.0
+2025-07-06T17:34:40.7702268Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250622.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-06T17:34:40.7705005Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250622.1
+2025-07-06T17:34:40.7706739Z ##[endgroup]
+2025-07-06T17:34:40.7708724Z ##[group]GITHUB_TOKEN Permissions
+2025-07-06T17:34:40.7711831Z Contents: read
+2025-07-06T17:34:40.7712763Z Metadata: read
+2025-07-06T17:34:40.7713634Z Packages: read
+2025-07-06T17:34:40.7714358Z ##[endgroup]
+2025-07-06T17:34:40.7718342Z Secret source: Actions
+2025-07-06T17:34:40.7719359Z Prepare workflow directory
+2025-07-06T17:34:40.8258810Z Prepare all required actions
+2025-07-06T17:34:40.8313937Z Getting action download info
+2025-07-06T17:34:41.0870093Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-06T17:34:41.0871051Z Version: 4.2.2
+2025-07-06T17:34:41.0872177Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-06T17:34:41.0873538Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-06T17:34:41.0874203Z ##[endgroup]
+2025-07-06T17:34:41.2536689Z Complete job name: preparation
+2025-07-06T17:34:41.3293130Z ##[group]Run actions/checkout@v4
+2025-07-06T17:34:41.3293921Z with:
+2025-07-06T17:34:41.3294318Z   repository: alejofl/secret-notes
+2025-07-06T17:34:41.3294944Z   token: ***
+2025-07-06T17:34:41.3295305Z   ssh-strict: true
+2025-07-06T17:34:41.3295676Z   ssh-user: git
+2025-07-06T17:34:41.3296055Z   persist-credentials: true
+2025-07-06T17:34:41.3296487Z   clean: true
+2025-07-06T17:34:41.3296871Z   sparse-checkout-cone-mode: true
+2025-07-06T17:34:41.3297338Z   fetch-depth: 1
+2025-07-06T17:34:41.3297709Z   fetch-tags: false
+2025-07-06T17:34:41.3298086Z   show-progress: true
+2025-07-06T17:34:41.3298478Z   lfs: false
+2025-07-06T17:34:41.3298823Z   submodules: false
+2025-07-06T17:34:41.3299211Z   set-safe-directory: true
+2025-07-06T17:34:41.3299936Z env:
+2025-07-06T17:34:41.3300311Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T17:34:41.3300765Z   NODE_VERSION: 22
+2025-07-06T17:34:41.3301130Z ##[endgroup]
+2025-07-06T17:34:41.4347142Z Syncing repository: alejofl/secret-notes
+2025-07-06T17:34:41.4348834Z ##[group]Getting Git version info
+2025-07-06T17:34:41.4349521Z Working directory is '/home/runner/work/secret-notes/secret-notes'
+2025-07-06T17:34:41.4350502Z [command]/usr/bin/git version
+2025-07-06T17:34:41.4420908Z git version 2.49.0
+2025-07-06T17:34:41.4446223Z ##[endgroup]
+2025-07-06T17:34:41.4466090Z Temporarily overriding HOME='/home/runner/work/_temp/39df9b2a-0add-4f71-9d96-25821c5e273e' before making global git config changes
+2025-07-06T17:34:41.4467402Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-06T17:34:41.4470981Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secret-notes/secret-notes
+2025-07-06T17:34:41.4504146Z Deleting the contents of '/home/runner/work/secret-notes/secret-notes'
+2025-07-06T17:34:41.4507766Z ##[group]Initializing the repository
+2025-07-06T17:34:41.4511679Z [command]/usr/bin/git init /home/runner/work/secret-notes/secret-notes
+2025-07-06T17:34:41.4624170Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-06T17:34:41.4625452Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-06T17:34:41.4626614Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-06T17:34:41.4627245Z hint:
+2025-07-06T17:34:41.4627705Z hint: 	git config --global init.defaultBranch <name>
+2025-07-06T17:34:41.4628247Z hint:
+2025-07-06T17:34:41.4628775Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-06T17:34:41.4629628Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-06T17:34:41.4630305Z hint:
+2025-07-06T17:34:41.4630666Z hint: 	git branch -m <name>
+2025-07-06T17:34:41.4635404Z Initialized empty Git repository in /home/runner/work/secret-notes/secret-notes/.git/
+2025-07-06T17:34:41.4646047Z [command]/usr/bin/git remote add origin https://github.com/alejofl/secret-notes
+2025-07-06T17:34:41.4679079Z ##[endgroup]
+2025-07-06T17:34:41.4679787Z ##[group]Disabling automatic garbage collection
+2025-07-06T17:34:41.4683458Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-06T17:34:41.4712032Z ##[endgroup]
+2025-07-06T17:34:41.4713326Z ##[group]Setting up auth
+2025-07-06T17:34:41.4719711Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-06T17:34:41.4749914Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-06T17:34:41.5036597Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-06T17:34:41.5069211Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-06T17:34:41.5285041Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-06T17:34:41.5318897Z ##[endgroup]
+2025-07-06T17:34:41.5320125Z ##[group]Fetching the repository
+2025-07-06T17:34:41.5328917Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5c7117118caa7cdb2ddf3cb08673cc488c287676:refs/remotes/origin/deploy
+2025-07-06T17:34:41.8392497Z From https://github.com/alejofl/secret-notes
+2025-07-06T17:34:41.8395335Z  * [new ref]         5c7117118caa7cdb2ddf3cb08673cc488c287676 -> origin/deploy
+2025-07-06T17:34:41.8419906Z ##[endgroup]
+2025-07-06T17:34:41.8420950Z ##[group]Determining the checkout info
+2025-07-06T17:34:41.8422466Z ##[endgroup]
+2025-07-06T17:34:41.8427559Z [command]/usr/bin/git sparse-checkout disable
+2025-07-06T17:34:41.8467210Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-06T17:34:41.8493511Z ##[group]Checking out the ref
+2025-07-06T17:34:41.8496968Z [command]/usr/bin/git checkout --progress --force -B deploy refs/remotes/origin/deploy
+2025-07-06T17:34:41.8606716Z Switched to a new branch 'deploy'
+2025-07-06T17:34:41.8609417Z branch 'deploy' set up to track 'origin/deploy'.
+2025-07-06T17:34:41.8615538Z ##[endgroup]
+2025-07-06T17:34:41.8647627Z [command]/usr/bin/git log -1 --format=%H
+2025-07-06T17:34:41.8668613Z 5c7117118caa7cdb2ddf3cb08673cc488c287676
+2025-07-06T17:34:41.8847168Z ##[group]Run VERSION=$(grep '"version"' package.json | sed 's/.*"version": "\(.*\)".*/\1/')
+2025-07-06T17:34:41.8848335Z [36;1mVERSION=$(grep '"version"' package.json | sed 's/.*"version": "\(.*\)".*/\1/')[0m
+2025-07-06T17:34:41.8849172Z [36;1mecho "version=$VERSION" >> $GITHUB_OUTPUT[0m
+2025-07-06T17:34:41.8849788Z [36;1mecho "App Version: $VERSION"[0m
+2025-07-06T17:34:41.8955470Z shell: /usr/bin/bash -e {0}
+2025-07-06T17:34:41.8955984Z env:
+2025-07-06T17:34:41.8956394Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T17:34:41.8956909Z   NODE_VERSION: 22
+2025-07-06T17:34:41.8957315Z ##[endgroup]
+2025-07-06T17:34:41.9073078Z App Version: 0.1.0
+2025-07-06T17:34:41.9192440Z Post job cleanup.
+2025-07-06T17:34:42.0122128Z [command]/usr/bin/git version
+2025-07-06T17:34:42.0157740Z git version 2.49.0
+2025-07-06T17:34:42.0200092Z Temporarily overriding HOME='/home/runner/work/_temp/7ea58307-3a8e-4469-96da-fe543917cac4' before making global git config changes
+2025-07-06T17:34:42.0202447Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-06T17:34:42.0205573Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secret-notes/secret-notes
+2025-07-06T17:34:42.0240158Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-06T17:34:42.0273270Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-06T17:34:42.0493277Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-06T17:34:42.0513427Z http.https://github.com/.extraheader
+2025-07-06T17:34:42.0526743Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-06T17:34:42.0558631Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-06T17:34:42.0882058Z Evaluate and set job outputs
+2025-07-06T17:34:42.0889714Z Set output 'app_version'
+2025-07-06T17:34:42.0892874Z Cleaning up orphan processes

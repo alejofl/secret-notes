@@ -1,0 +1,341 @@
+﻿2025-07-06T15:37:06.6731131Z Current runner version: '2.325.0'
+2025-07-06T15:37:06.6754238Z ##[group]Runner Image Provisioner
+2025-07-06T15:37:06.6755142Z Hosted Compute Agent
+2025-07-06T15:37:06.6755881Z Version: 20250620.352
+2025-07-06T15:37:06.6756552Z Commit: f262f3aba23b10ea191b2a62bdee1ca4c3d344da
+2025-07-06T15:37:06.6757225Z Build Date: 2025-06-20T19:27:17Z
+2025-07-06T15:37:06.6757936Z ##[endgroup]
+2025-07-06T15:37:06.6758590Z ##[group]Operating System
+2025-07-06T15:37:06.6759340Z Ubuntu
+2025-07-06T15:37:06.6760031Z 24.04.2
+2025-07-06T15:37:06.6760526Z LTS
+2025-07-06T15:37:06.6760976Z ##[endgroup]
+2025-07-06T15:37:06.6761612Z ##[group]Runner Image
+2025-07-06T15:37:06.6762179Z Image: ubuntu-24.04
+2025-07-06T15:37:06.6762689Z Version: 20250622.1.0
+2025-07-06T15:37:06.6763784Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250622.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-06T15:37:06.6765371Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250622.1
+2025-07-06T15:37:06.6766496Z ##[endgroup]
+2025-07-06T15:37:06.6767587Z ##[group]GITHUB_TOKEN Permissions
+2025-07-06T15:37:06.6769671Z Contents: read
+2025-07-06T15:37:06.6770260Z Metadata: read
+2025-07-06T15:37:06.6770773Z Packages: read
+2025-07-06T15:37:06.6771448Z ##[endgroup]
+2025-07-06T15:37:06.6773444Z Secret source: Actions
+2025-07-06T15:37:06.6774163Z Prepare workflow directory
+2025-07-06T15:37:06.7175738Z Prepare all required actions
+2025-07-06T15:37:06.7215004Z Getting action download info
+2025-07-06T15:37:07.0574633Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-06T15:37:07.0575738Z Version: 4.2.2
+2025-07-06T15:37:07.0576924Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-06T15:37:07.0578282Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-06T15:37:07.0579084Z ##[endgroup]
+2025-07-06T15:37:07.1432043Z Download action repository 'sonarsource/sonarqube-scan-action@master' (SHA:ef211f93a68be0c3a2cd18f4334e6815890607bc)
+2025-07-06T15:37:07.4574689Z Getting action download info
+2025-07-06T15:37:07.6010334Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-07-06T15:37:07.6011591Z Version: 4.2.3
+2025-07-06T15:37:07.6012895Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-07-06T15:37:07.6014707Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-07-06T15:37:07.6015442Z ##[endgroup]
+2025-07-06T15:37:07.7255248Z Complete job name: sonarqube
+2025-07-06T15:37:07.7926563Z ##[group]Run actions/checkout@v4
+2025-07-06T15:37:07.7927475Z with:
+2025-07-06T15:37:07.7927936Z   fetch-depth: 0
+2025-07-06T15:37:07.7928416Z   repository: alejofl/secret-notes
+2025-07-06T15:37:07.7929304Z   token: ***
+2025-07-06T15:37:07.7929764Z   ssh-strict: true
+2025-07-06T15:37:07.7930213Z   ssh-user: git
+2025-07-06T15:37:07.7930687Z   persist-credentials: true
+2025-07-06T15:37:07.7931192Z   clean: true
+2025-07-06T15:37:07.7931637Z   sparse-checkout-cone-mode: true
+2025-07-06T15:37:07.7932177Z   fetch-tags: false
+2025-07-06T15:37:07.7932662Z   show-progress: true
+2025-07-06T15:37:07.7933139Z   lfs: false
+2025-07-06T15:37:07.7933559Z   submodules: false
+2025-07-06T15:37:07.7934024Z   set-safe-directory: true
+2025-07-06T15:37:07.7934766Z env:
+2025-07-06T15:37:07.7935222Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T15:37:07.7935773Z   NODE_VERSION: 22
+2025-07-06T15:37:07.7936216Z ##[endgroup]
+2025-07-06T15:37:07.8992722Z Syncing repository: alejofl/secret-notes
+2025-07-06T15:37:07.8994832Z ##[group]Getting Git version info
+2025-07-06T15:37:07.8995640Z Working directory is '/home/runner/work/secret-notes/secret-notes'
+2025-07-06T15:37:07.8996721Z [command]/usr/bin/git version
+2025-07-06T15:37:07.9045669Z git version 2.49.0
+2025-07-06T15:37:07.9072444Z ##[endgroup]
+2025-07-06T15:37:07.9085593Z Temporarily overriding HOME='/home/runner/work/_temp/cfe925fc-ebbb-48d4-8c58-af9d69d44ec9' before making global git config changes
+2025-07-06T15:37:07.9097137Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-06T15:37:07.9098686Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secret-notes/secret-notes
+2025-07-06T15:37:07.9129832Z Deleting the contents of '/home/runner/work/secret-notes/secret-notes'
+2025-07-06T15:37:07.9133391Z ##[group]Initializing the repository
+2025-07-06T15:37:07.9137130Z [command]/usr/bin/git init /home/runner/work/secret-notes/secret-notes
+2025-07-06T15:37:07.9232898Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-06T15:37:07.9234712Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-06T15:37:07.9236664Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-06T15:37:07.9237934Z hint:
+2025-07-06T15:37:07.9239494Z hint: 	git config --global init.defaultBranch <name>
+2025-07-06T15:37:07.9241168Z hint:
+2025-07-06T15:37:07.9242731Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-06T15:37:07.9245288Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-06T15:37:07.9247095Z hint:
+2025-07-06T15:37:07.9247914Z hint: 	git branch -m <name>
+2025-07-06T15:37:07.9249839Z Initialized empty Git repository in /home/runner/work/secret-notes/secret-notes/.git/
+2025-07-06T15:37:07.9253208Z [command]/usr/bin/git remote add origin https://github.com/alejofl/secret-notes
+2025-07-06T15:37:07.9284225Z ##[endgroup]
+2025-07-06T15:37:07.9285674Z ##[group]Disabling automatic garbage collection
+2025-07-06T15:37:07.9289102Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-06T15:37:07.9317405Z ##[endgroup]
+2025-07-06T15:37:07.9318588Z ##[group]Setting up auth
+2025-07-06T15:37:07.9323626Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-06T15:37:07.9353174Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-06T15:37:07.9634511Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-06T15:37:07.9662075Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-06T15:37:07.9882265Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-06T15:37:07.9917414Z ##[endgroup]
+2025-07-06T15:37:07.9937408Z ##[group]Fetching the repository
+2025-07-06T15:37:07.9939862Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2025-07-06T15:37:08.4278437Z From https://github.com/alejofl/secret-notes
+2025-07-06T15:37:08.4280379Z  * [new branch]      deploy     -> origin/deploy
+2025-07-06T15:37:08.4281925Z  * [new branch]      master     -> origin/master
+2025-07-06T15:37:08.4313421Z [command]/usr/bin/git branch --list --remote origin/deploy
+2025-07-06T15:37:08.4334983Z   origin/deploy
+2025-07-06T15:37:08.4345417Z [command]/usr/bin/git rev-parse refs/remotes/origin/deploy
+2025-07-06T15:37:08.4365559Z c95c124f62ab2d706f28e29ac0bd7c7d7649edeb
+2025-07-06T15:37:08.4371934Z ##[endgroup]
+2025-07-06T15:37:08.4373630Z ##[group]Determining the checkout info
+2025-07-06T15:37:08.4375181Z ##[endgroup]
+2025-07-06T15:37:08.4376831Z [command]/usr/bin/git sparse-checkout disable
+2025-07-06T15:37:08.4414790Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-06T15:37:08.4440528Z ##[group]Checking out the ref
+2025-07-06T15:37:08.4443998Z [command]/usr/bin/git checkout --progress --force -B deploy refs/remotes/origin/deploy
+2025-07-06T15:37:08.4549393Z Switched to a new branch 'deploy'
+2025-07-06T15:37:08.4552130Z branch 'deploy' set up to track 'origin/deploy'.
+2025-07-06T15:37:08.4560894Z ##[endgroup]
+2025-07-06T15:37:08.4593482Z [command]/usr/bin/git log -1 --format=%H
+2025-07-06T15:37:08.4615135Z c95c124f62ab2d706f28e29ac0bd7c7d7649edeb
+2025-07-06T15:37:08.4979842Z ##[group]Run sonarsource/sonarqube-scan-action@master
+2025-07-06T15:37:08.4981524Z with:
+2025-07-06T15:37:08.4982399Z   scannerVersion: 7.1.0.4889
+2025-07-06T15:37:08.4984175Z   scannerBinariesUrl: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli
+2025-07-06T15:37:08.4986031Z env:
+2025-07-06T15:37:08.4986899Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T15:37:08.4988033Z   NODE_VERSION: 22
+2025-07-06T15:37:08.4989609Z   SONAR_TOKEN: ***
+2025-07-06T15:37:08.4991007Z   SONAR_HOST_URL: ***
+2025-07-06T15:37:08.4991956Z ##[endgroup]
+2025-07-06T15:37:08.5098253Z ##[group]Run ${GITHUB_ACTION_PATH}/scripts/sanity-checks.sh
+2025-07-06T15:37:08.5100107Z [36;1m${GITHUB_ACTION_PATH}/scripts/sanity-checks.sh[0m
+2025-07-06T15:37:08.5190338Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-06T15:37:08.5191710Z env:
+2025-07-06T15:37:08.5192631Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T15:37:08.5193753Z   NODE_VERSION: 22
+2025-07-06T15:37:08.5194981Z   SONAR_TOKEN: ***
+2025-07-06T15:37:08.5196274Z   SONAR_HOST_URL: ***
+2025-07-06T15:37:08.5197177Z   INPUT_PROJECTBASEDIR: 
+2025-07-06T15:37:08.5198153Z   INPUT_SCANNERVERSION: 7.1.0.4889
+2025-07-06T15:37:08.5199293Z ##[endgroup]
+2025-07-06T15:37:08.5453607Z ##[group]Run actions/cache@v4
+2025-07-06T15:37:08.5454594Z with:
+2025-07-06T15:37:08.5455722Z   path: /home/runner/work/_temp/sonar-scanner-cli-7.1.0.4889-Linux-X64
+2025-07-06T15:37:08.5457283Z   key: sonar-scanner-cli-7.1.0.4889-Linux-X64
+2025-07-06T15:37:08.5458462Z   enableCrossOsArchive: false
+2025-07-06T15:37:08.5459635Z   fail-on-cache-miss: false
+2025-07-06T15:37:08.5460600Z   lookup-only: false
+2025-07-06T15:37:08.5461455Z   save-always: false
+2025-07-06T15:37:08.5462262Z env:
+2025-07-06T15:37:08.5463024Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T15:37:08.5464024Z   NODE_VERSION: 22
+2025-07-06T15:37:08.5465164Z   SONAR_TOKEN: ***
+2025-07-06T15:37:08.5466395Z   SONAR_HOST_URL: ***
+2025-07-06T15:37:08.5467333Z   SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
+2025-07-06T15:37:08.5468341Z ##[endgroup]
+2025-07-06T15:37:08.8583510Z Cache hit for: sonar-scanner-cli-7.1.0.4889-Linux-X64
+2025-07-06T15:37:09.6144386Z Received 51888735 of 51888735 (100.0%), 81.1 MBs/sec
+2025-07-06T15:37:09.6146485Z Cache Size: ~49 MB (51888735 B)
+2025-07-06T15:37:09.6175191Z [command]/usr/bin/tar -xf /home/runner/work/_temp/28243248-19c5-4479-9e4f-6d78ee3057e4/cache.tzst -P -C /home/runner/work/secret-notes/secret-notes --use-compress-program unzstd
+2025-07-06T15:37:09.8625651Z Cache restored successfully
+2025-07-06T15:37:09.8884573Z Cache restored from key: sonar-scanner-cli-7.1.0.4889-Linux-X64
+2025-07-06T15:37:09.9085577Z ##[group]Run echo "${RUNNER_TEMP}/sonar-scanner-cli-7.1.0.4889-Linux-X64/bin" >> $GITHUB_PATH
+2025-07-06T15:37:09.9087790Z [36;1mecho "${RUNNER_TEMP}/sonar-scanner-cli-7.1.0.4889-Linux-X64/bin" >> $GITHUB_PATH[0m
+2025-07-06T15:37:09.9153795Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-06T15:37:09.9155371Z env:
+2025-07-06T15:37:09.9156168Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T15:37:09.9157180Z   NODE_VERSION: 22
+2025-07-06T15:37:09.9158382Z   SONAR_TOKEN: ***
+2025-07-06T15:37:09.9159866Z   SONAR_HOST_URL: ***
+2025-07-06T15:37:09.9160728Z ##[endgroup]
+2025-07-06T15:37:09.9292956Z ##[group]Run args=()
+2025-07-06T15:37:09.9293804Z [36;1margs=()[0m
+2025-07-06T15:37:09.9295077Z [36;1mcmd=(${GITHUB_ACTION_PATH}/scripts/run-sonar-scanner-cli.sh "${args[@]}")[0m
+2025-07-06T15:37:09.9296597Z [36;1m"${cmd[@]}"[0m
+2025-07-06T15:37:09.9355891Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-06T15:37:09.9357151Z env:
+2025-07-06T15:37:09.9357929Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T15:37:09.9358934Z   NODE_VERSION: 22
+2025-07-06T15:37:09.9360186Z   SONAR_TOKEN: ***
+2025-07-06T15:37:09.9361420Z   SONAR_HOST_URL: ***
+2025-07-06T15:37:09.9362292Z   INPUT_PROJECTBASEDIR: 
+2025-07-06T15:37:09.9363741Z   SONAR_SCANNER_JRE: /home/runner/work/_temp/sonar-scanner-cli-7.1.0.4889-Linux-X64/jre
+2025-07-06T15:37:09.9365551Z ##[endgroup]
+2025-07-06T15:37:09.9476108Z + sonar-scanner
+2025-07-06T15:37:10.2443588Z 15:37:10.239 INFO  Scanner configuration file: /home/runner/work/_temp/sonar-scanner-cli-7.1.0.4889-Linux-X64/conf/sonar-scanner.properties
+2025-07-06T15:37:10.2449400Z 15:37:10.243 INFO  Project root configuration file: /home/runner/work/secret-notes/secret-notes/sonar-project.properties
+2025-07-06T15:37:10.2604693Z 15:37:10.260 INFO  SonarScanner CLI 7.1.0.4889
+2025-07-06T15:37:10.2621376Z 15:37:10.261 INFO  Java 17.0.13 Eclipse Adoptium (64-bit)
+2025-07-06T15:37:10.2631078Z 15:37:10.262 INFO  Linux 6.11.0-1015-azure amd64
+2025-07-06T15:37:10.3008562Z 15:37:10.300 INFO  User cache: /home/runner/.sonar/cache
+2025-07-06T15:37:11.2377465Z 15:37:11.237 INFO  Communicating with SonarQube Server 9.9.8.100196
+2025-07-06T15:37:12.1400902Z 15:37:12.139 INFO  Load global settings
+2025-07-06T15:37:12.2332500Z 15:37:12.232 INFO  Load global settings (done) | time=94ms
+2025-07-06T15:37:12.2355507Z 15:37:12.234 INFO  Server id: 147B411E-AZfVl-OsOpBHfWEka8kX
+2025-07-06T15:37:12.2392717Z 15:37:12.239 INFO  User cache: /home/runner/.sonar/cache
+2025-07-06T15:37:12.2423051Z 15:37:12.242 INFO  Load/download plugins
+2025-07-06T15:37:12.2424129Z 15:37:12.242 INFO  Load plugins index
+2025-07-06T15:37:12.2911123Z 15:37:12.290 INFO  Load plugins index (done) | time=48ms
+2025-07-06T15:37:13.9962055Z 15:37:13.995 INFO  Load/download plugins (done) | time=1753ms
+2025-07-06T15:37:14.4360624Z 15:37:14.433 INFO  Process project properties
+2025-07-06T15:37:14.4361371Z 15:37:14.434 INFO  Process project properties (done) | time=1ms
+2025-07-06T15:37:14.4369899Z 15:37:14.436 INFO  Execute project builders
+2025-07-06T15:37:14.4383153Z 15:37:14.437 INFO  Execute project builders (done) | time=1ms
+2025-07-06T15:37:14.4399355Z 15:37:14.439 INFO  Project key: secret-notes
+2025-07-06T15:37:14.4401217Z 15:37:14.439 INFO  Base dir: /home/runner/work/secret-notes/secret-notes
+2025-07-06T15:37:14.4402158Z 15:37:14.439 INFO  Working dir: /home/runner/work/secret-notes/secret-notes/.scannerwork
+2025-07-06T15:37:14.4476930Z 15:37:14.447 INFO  Load project settings for component key: 'secret-notes'
+2025-07-06T15:37:14.4870983Z 15:37:14.486 INFO  Load project settings for component key: 'secret-notes' (done) | time=39ms
+2025-07-06T15:37:14.5950222Z 15:37:14.594 INFO  Auto-configuring with CI 'Github Actions'
+2025-07-06T15:37:14.5989701Z 15:37:14.597 INFO  Load quality profiles
+2025-07-06T15:37:14.6570192Z 15:37:14.656 INFO  Load quality profiles (done) | time=59ms
+2025-07-06T15:37:14.6621035Z 15:37:14.661 INFO  Load active rules
+2025-07-06T15:37:17.2701959Z 15:37:17.269 INFO  Load active rules (done) | time=2608ms
+2025-07-06T15:37:17.2744312Z 15:37:17.273 INFO  Load analysis cache
+2025-07-06T15:37:17.3126263Z 15:37:17.312 INFO  Load analysis cache | time=39ms
+2025-07-06T15:37:17.3523821Z 15:37:17.351 INFO  Load project repositories
+2025-07-06T15:37:17.3867134Z 15:37:17.386 INFO  Load project repositories (done) | time=35ms
+2025-07-06T15:37:17.4184493Z 15:37:17.418 INFO  Indexing files...
+2025-07-06T15:37:17.4186472Z 15:37:17.418 INFO  Project configuration:
+2025-07-06T15:37:17.7040340Z 15:37:17.702 INFO  90 files indexed
+2025-07-06T15:37:17.7049810Z 15:37:17.703 INFO  0 files ignored because of scm ignore settings
+2025-07-06T15:37:17.7050790Z 15:37:17.704 INFO  Quality profile for css: Sonar way
+2025-07-06T15:37:17.7051680Z 15:37:17.704 INFO  Quality profile for js: Sonar way
+2025-07-06T15:37:17.7052516Z 15:37:17.704 INFO  Quality profile for json: Sonar way
+2025-07-06T15:37:17.7053255Z 15:37:17.704 INFO  Quality profile for ts: Sonar way
+2025-07-06T15:37:17.7053950Z 15:37:17.704 INFO  Quality profile for web: Sonar way
+2025-07-06T15:37:17.7054670Z 15:37:17.704 INFO  Quality profile for yaml: Sonar way
+2025-07-06T15:37:17.7055463Z 15:37:17.704 INFO  ------------- Run sensors on module secret-notes
+2025-07-06T15:37:17.7885452Z 15:37:17.788 INFO  Load metrics repository
+2025-07-06T15:37:17.8311489Z 15:37:17.830 INFO  Load metrics repository (done) | time=42ms
+2025-07-06T15:37:18.8312266Z 15:37:18.830 INFO  Sensor JaCoCo XML Report Importer [jacoco]
+2025-07-06T15:37:18.8320986Z 15:37:18.831 INFO  'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+2025-07-06T15:37:18.8330491Z 15:37:18.832 INFO  No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+2025-07-06T15:37:18.8333492Z 15:37:18.832 INFO  Sensor JaCoCo XML Report Importer [jacoco] (done) | time=2ms
+2025-07-06T15:37:18.8338819Z 15:37:18.832 INFO  Sensor IaC CloudFormation Sensor [iac]
+2025-07-06T15:37:18.9331456Z 15:37:18.932 INFO  0 source files to be analyzed
+2025-07-06T15:37:18.9730416Z 15:37:18.970 INFO  0/0 source files have been analyzed
+2025-07-06T15:37:18.9731518Z 15:37:18.970 INFO  Sensor IaC CloudFormation Sensor [iac] (done) | time=138ms
+2025-07-06T15:37:18.9732462Z 15:37:18.970 INFO  Sensor IaC Kubernetes Sensor [iac]
+2025-07-06T15:37:19.0307398Z 15:37:19.030 INFO  0 source files to be analyzed
+2025-07-06T15:37:19.0773987Z 15:37:19.077 INFO  0/0 source files have been analyzed
+2025-07-06T15:37:19.0781858Z 15:37:19.077 INFO  Sensor IaC Kubernetes Sensor [iac] (done) | time=107ms
+2025-07-06T15:37:19.0782555Z 15:37:19.078 INFO  Sensor JavaScript analysis [javascript]
+2025-07-06T15:37:23.6073567Z 15:37:23.607 WARN  Node.js version 20 is not recommended, you might experience issues. Please use a recommended version of Node.js [16, 18]
+2025-07-06T15:37:23.6182724Z 15:37:23.617 INFO  2 source files to be analyzed
+2025-07-06T15:37:24.1928813Z 15:37:24.192 INFO  2/2 source files have been analyzed
+2025-07-06T15:37:24.1932458Z 15:37:24.192 INFO  Hit the cache for 0 out of 2
+2025-07-06T15:37:24.1937211Z 15:37:24.193 INFO  Miss the cache for 2 out of 2: ANALYSIS_MODE_INELIGIBLE [2/2]
+2025-07-06T15:37:24.1938265Z 15:37:24.193 INFO  Sensor JavaScript analysis [javascript] (done) | time=5115ms
+2025-07-06T15:37:24.1941142Z 15:37:24.193 INFO  Sensor TypeScript analysis [javascript]
+2025-07-06T15:37:24.2203361Z 15:37:24.220 INFO  Found 2 tsconfig.json file(s): [/home/runner/work/secret-notes/secret-notes/backend/tsconfig.json, /home/runner/work/secret-notes/secret-notes/frontend/tsconfig.json]
+2025-07-06T15:37:24.2260543Z 15:37:24.220 INFO  Creating TypeScript program
+2025-07-06T15:37:24.2261434Z 15:37:24.221 INFO  50 source files to be analyzed
+2025-07-06T15:37:24.2262635Z 15:37:24.221 INFO  TypeScript configuration file /home/runner/work/secret-notes/secret-notes/backend/tsconfig.json
+2025-07-06T15:37:24.4732283Z 15:37:24.472 INFO  Creating TypeScript program (done) | time=252ms
+2025-07-06T15:37:24.4733961Z 15:37:24.473 INFO  Starting analysis with current program
+2025-07-06T15:37:25.0088221Z 15:37:25.008 INFO  Analyzed 3 file(s) with current program
+2025-07-06T15:37:25.0131875Z 15:37:25.011 INFO  Creating TypeScript program
+2025-07-06T15:37:25.0133269Z 15:37:25.012 INFO  TypeScript configuration file /home/runner/work/secret-notes/secret-notes/frontend/tsconfig.json
+2025-07-06T15:37:25.0228039Z 15:37:25.022 ERROR Error: Argument for '--moduleResolution' option must be: 'node', 'classic', 'node16', 'nodenext'.; Unknown compiler option 'allowImportingTsExtensions'.; Unknown compiler option 'verbatimModuleSyntax'.; Unknown compiler option 'noUncheckedSideEffectImports'.
+2025-07-06T15:37:25.0231098Z 15:37:25.022 ERROR     at createProgramOptions (/home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/lib/services/program/program.js:106:15)
+2025-07-06T15:37:25.0233415Z 15:37:25.022 ERROR     at createProgram (/home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/lib/services/program/program.js:132:28)
+2025-07-06T15:37:25.0235327Z 15:37:25.022 ERROR     at default_1 (/home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/lib/routing/on-create-program.js:10:57)
+2025-07-06T15:37:25.0237709Z 15:37:25.022 ERROR     at Layer.handle [as handle_request] (/home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/layer.js:95:5)
+2025-07-06T15:37:25.0240273Z 15:37:25.022 ERROR     at next (/home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/route.js:144:13)
+2025-07-06T15:37:25.0241449Z 15:37:25.022 ERROR     at Route.dispatch (/home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/route.js:114:3)
+2025-07-06T15:37:25.0243449Z 15:37:25.022 ERROR     at Layer.handle [as handle_request] (/home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/layer.js:95:5)
+2025-07-06T15:37:25.0245454Z 15:37:25.022 ERROR     at /home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/index.js:284:15
+2025-07-06T15:37:25.0246891Z 15:37:25.022 ERROR     at Function.process_params (/home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/index.js:346:12)
+2025-07-06T15:37:25.0248178Z 15:37:25.022 ERROR     at next (/home/runner/work/secret-notes/secret-notes/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/index.js:280:10)
+2025-07-06T15:37:25.0250162Z 15:37:25.024 ERROR Failed to create program: Argument for '--moduleResolution' option must be: 'node', 'classic', 'node16', 'nodenext'.; Unknown compiler option 'allowImportingTsExtensions'.; Unknown compiler option 'verbatimModuleSyntax'.; Unknown compiler option 'noUncheckedSideEffectImports'.
+2025-07-06T15:37:25.0251810Z 15:37:25.024 INFO  Creating TypeScript program (done) | time=13ms
+2025-07-06T15:37:25.0252772Z 15:37:25.024 INFO  Skipped 47 file(s) because they were not part of any tsconfig.json (enable debug logs to see the full list)
+2025-07-06T15:37:25.0253665Z 15:37:25.025 INFO  50/50 source files have been analyzed
+2025-07-06T15:37:25.0257678Z 15:37:25.025 INFO  Hit the cache for 0 out of 3
+2025-07-06T15:37:25.0259026Z 15:37:25.025 INFO  Miss the cache for 3 out of 3: ANALYSIS_MODE_INELIGIBLE [3/3]
+2025-07-06T15:37:25.0260079Z 15:37:25.025 INFO  Sensor TypeScript analysis [javascript] (done) | time=832ms
+2025-07-06T15:37:25.0260820Z 15:37:25.025 INFO  Sensor JavaScript inside YAML analysis [javascript]
+2025-07-06T15:37:25.0292769Z 15:37:25.027 INFO  No input files found for analysis
+2025-07-06T15:37:25.0294192Z 15:37:25.027 INFO  Hit the cache for 0 out of 0
+2025-07-06T15:37:25.0294683Z 15:37:25.027 INFO  Miss the cache for 0 out of 0
+2025-07-06T15:37:25.0295370Z 15:37:25.027 INFO  Sensor JavaScript inside YAML analysis [javascript] (done) | time=2ms
+2025-07-06T15:37:25.0298392Z 15:37:25.027 INFO  Sensor CSS Rules [javascript]
+2025-07-06T15:37:25.0325189Z 15:37:25.032 INFO  3 source files to be analyzed
+2025-07-06T15:37:25.3624128Z 15:37:25.362 INFO  3/3 source files have been analyzed
+2025-07-06T15:37:25.3651145Z 15:37:25.362 INFO  Hit the cache for 0 out of 0
+2025-07-06T15:37:25.3651824Z 15:37:25.362 INFO  Miss the cache for 0 out of 0
+2025-07-06T15:37:25.3652424Z 15:37:25.362 INFO  Sensor CSS Rules [javascript] (done) | time=335ms
+2025-07-06T15:37:25.3653040Z 15:37:25.362 INFO  Sensor CSS Metrics [javascript]
+2025-07-06T15:37:25.5717485Z 15:37:25.570 INFO  Sensor CSS Metrics [javascript] (done) | time=208ms
+2025-07-06T15:37:25.5721315Z 15:37:25.571 INFO  Sensor C# Project Type Information [csharp]
+2025-07-06T15:37:25.5742256Z 15:37:25.573 INFO  Sensor C# Project Type Information [csharp] (done) | time=2ms
+2025-07-06T15:37:25.5745148Z 15:37:25.574 INFO  Sensor C# Analysis Log [csharp]
+2025-07-06T15:37:25.5894637Z 15:37:25.587 INFO  Sensor C# Analysis Log [csharp] (done) | time=13ms
+2025-07-06T15:37:25.5895616Z 15:37:25.587 INFO  Sensor C# Properties [csharp]
+2025-07-06T15:37:25.5896343Z 15:37:25.587 INFO  Sensor C# Properties [csharp] (done) | time=0ms
+2025-07-06T15:37:25.5897420Z 15:37:25.587 INFO  Sensor HTML [web]
+2025-07-06T15:37:25.6169588Z 15:37:25.616 INFO  Sensor HTML [web] (done) | time=29ms
+2025-07-06T15:37:25.6170259Z 15:37:25.616 INFO  Sensor TextAndSecretsSensor [text]
+2025-07-06T15:37:25.6273574Z 15:37:25.627 INFO  68 source files to be analyzed
+2025-07-06T15:37:25.8606598Z 15:37:25.860 INFO  68/68 source files have been analyzed
+2025-07-06T15:37:25.8639964Z 15:37:25.860 INFO  Sensor TextAndSecretsSensor [text] (done) | time=244ms
+2025-07-06T15:37:25.8640890Z 15:37:25.860 INFO  Sensor VB.NET Project Type Information [vbnet]
+2025-07-06T15:37:25.8641803Z 15:37:25.861 INFO  Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+2025-07-06T15:37:25.8642673Z 15:37:25.861 INFO  Sensor VB.NET Analysis Log [vbnet]
+2025-07-06T15:37:25.8712782Z 15:37:25.871 INFO  Sensor VB.NET Analysis Log [vbnet] (done) | time=10ms
+2025-07-06T15:37:25.8713604Z 15:37:25.871 INFO  Sensor VB.NET Properties [vbnet]
+2025-07-06T15:37:25.8714537Z 15:37:25.871 INFO  Sensor VB.NET Properties [vbnet] (done) | time=0ms
+2025-07-06T15:37:25.8715416Z 15:37:25.871 INFO  Sensor IaC Docker Sensor [iac]
+2025-07-06T15:37:25.8771483Z 15:37:25.877 INFO  2 source files to be analyzed
+2025-07-06T15:37:25.9556510Z 15:37:25.955 INFO  2/2 source files have been analyzed
+2025-07-06T15:37:25.9561058Z 15:37:25.955 INFO  Sensor IaC Docker Sensor [iac] (done) | time=84ms
+2025-07-06T15:37:25.9615877Z 15:37:25.959 INFO  ------------- Run sensors on project
+2025-07-06T15:37:26.0208650Z 15:37:26.020 INFO  Sensor Analysis Warnings import [csharp]
+2025-07-06T15:37:26.0214542Z 15:37:26.021 INFO  Sensor Analysis Warnings import [csharp] (done) | time=1ms
+2025-07-06T15:37:26.0223617Z 15:37:26.021 INFO  Sensor Zero Coverage Sensor
+2025-07-06T15:37:26.0326926Z 15:37:26.029 INFO  Sensor Zero Coverage Sensor (done) | time=8ms
+2025-07-06T15:37:26.0478214Z 15:37:26.047 INFO  CPD Executor 1 file had no CPD blocks
+2025-07-06T15:37:26.0508327Z 15:37:26.050 INFO  CPD Executor Calculating CPD for 5 files
+2025-07-06T15:37:26.0612282Z 15:37:26.060 INFO  CPD Executor CPD calculation finished (done) | time=9ms
+2025-07-06T15:37:26.1674076Z 15:37:26.166 INFO  Analysis report generated in 101ms, dir size=331.7 kB
+2025-07-06T15:37:26.2350893Z 15:37:26.234 INFO  Analysis report compressed in 67ms, zip size=109.7 kB
+2025-07-06T15:37:26.3668961Z 15:37:26.366 INFO  Analysis report uploaded in 132ms
+2025-07-06T15:37:26.3682109Z 15:37:26.367 INFO  ANALYSIS SUCCESSFUL, you can find the results at: ***/dashboard?id=secret-notes
+2025-07-06T15:37:26.3683766Z 15:37:26.367 INFO  Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+2025-07-06T15:37:26.3685975Z 15:37:26.368 INFO  More about the report processing at ***/api/ce/task?id=AZfgYpQnpyAgsaTRxGNi
+2025-07-06T15:37:26.9453628Z 15:37:26.944 INFO  Analysis total time: 12.833 s
+2025-07-06T15:37:26.9462849Z 15:37:26.946 INFO  EXECUTION SUCCESS
+2025-07-06T15:37:26.9467321Z 15:37:26.946 INFO  Total time: 16.711s
+2025-07-06T15:37:27.2888090Z Post job cleanup.
+2025-07-06T15:37:27.2930190Z Post job cleanup.
+2025-07-06T15:37:27.4197789Z Cache hit occurred on the primary key sonar-scanner-cli-7.1.0.4889-Linux-X64, not saving cache.
+2025-07-06T15:37:27.4323425Z Post job cleanup.
+2025-07-06T15:37:27.5274589Z [command]/usr/bin/git version
+2025-07-06T15:37:27.5312723Z git version 2.49.0
+2025-07-06T15:37:27.5363927Z Temporarily overriding HOME='/home/runner/work/_temp/affc9f8e-a2a8-4d1b-8568-98a068ec72ec' before making global git config changes
+2025-07-06T15:37:27.5365158Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-06T15:37:27.5378658Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secret-notes/secret-notes
+2025-07-06T15:37:27.5413518Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-06T15:37:27.5447686Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-06T15:37:27.5684407Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-06T15:37:27.5707178Z http.https://github.com/.extraheader
+2025-07-06T15:37:27.5721619Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-06T15:37:27.5753538Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-06T15:37:27.6121749Z Cleaning up orphan processes

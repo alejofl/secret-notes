@@ -1,0 +1,237 @@
+﻿2025-07-06T15:39:01.5225353Z Current runner version: '2.325.0'
+2025-07-06T15:39:01.5247374Z ##[group]Runner Image Provisioner
+2025-07-06T15:39:01.5248283Z Hosted Compute Agent
+2025-07-06T15:39:01.5248867Z Version: 20250620.352
+2025-07-06T15:39:01.5249475Z Commit: f262f3aba23b10ea191b2a62bdee1ca4c3d344da
+2025-07-06T15:39:01.5250300Z Build Date: 2025-06-20T19:27:17Z
+2025-07-06T15:39:01.5250918Z ##[endgroup]
+2025-07-06T15:39:01.5251468Z ##[group]Operating System
+2025-07-06T15:39:01.5252065Z Ubuntu
+2025-07-06T15:39:01.5252537Z 24.04.2
+2025-07-06T15:39:01.5252979Z LTS
+2025-07-06T15:39:01.5253643Z ##[endgroup]
+2025-07-06T15:39:01.5254221Z ##[group]Runner Image
+2025-07-06T15:39:01.5254757Z Image: ubuntu-24.04
+2025-07-06T15:39:01.5255341Z Version: 20250622.1.0
+2025-07-06T15:39:01.5256310Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250622.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-06T15:39:01.5257851Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250622.1
+2025-07-06T15:39:01.5258857Z ##[endgroup]
+2025-07-06T15:39:01.5259970Z ##[group]GITHUB_TOKEN Permissions
+2025-07-06T15:39:01.5261740Z Contents: read
+2025-07-06T15:39:01.5262314Z Metadata: read
+2025-07-06T15:39:01.5262960Z Packages: read
+2025-07-06T15:39:01.5263653Z ##[endgroup]
+2025-07-06T15:39:01.5265593Z Secret source: Actions
+2025-07-06T15:39:01.5266399Z Prepare workflow directory
+2025-07-06T15:39:01.5639719Z Prepare all required actions
+2025-07-06T15:39:01.5680450Z Getting action download info
+2025-07-06T15:39:02.0147630Z ##[group]Download immutable action package 'actions/download-artifact@v4'
+2025-07-06T15:39:02.0148646Z Version: 4.3.0
+2025-07-06T15:39:02.0149767Z Digest: sha256:552a5b9ad918f62ec0c2e8f42f3c694d4ebd1b4036b18c39b14168fcdfc0e4f2
+2025-07-06T15:39:02.0151239Z Source commit SHA: d3f86a106a0bac45b974a628896c90dbdf5c8093
+2025-07-06T15:39:02.0152353Z ##[endgroup]
+2025-07-06T15:39:02.3861452Z ##[group]Download immutable action package 'docker/login-action@v3'
+2025-07-06T15:39:02.3862333Z Version: 3.4.0
+2025-07-06T15:39:02.3863452Z Digest: sha256:864ebd28db095e1602e6ef999f46a4f575083ea874918fbccf0994c2a7680450
+2025-07-06T15:39:02.3864581Z Source commit SHA: 74a5d142397b4f367a81961eba4e8cd7edddf772
+2025-07-06T15:39:02.3865294Z ##[endgroup]
+2025-07-06T15:39:02.8564127Z Complete job name: delivery
+2025-07-06T15:39:02.9296376Z ##[group]Run actions/download-artifact@v4
+2025-07-06T15:39:02.9298074Z with:
+2025-07-06T15:39:02.9298901Z   name: frontend-image
+2025-07-06T15:39:02.9299791Z   path: /tmp
+2025-07-06T15:39:02.9300608Z   merge-multiple: false
+2025-07-06T15:39:02.9301642Z   repository: ***/secret-notes
+2025-07-06T15:39:02.9302632Z   run-id: 16100605116
+2025-07-06T15:39:02.9303882Z env:
+2025-07-06T15:39:02.9304742Z   IMAGE_NAME: ***/secret-notes
+2025-07-06T15:39:02.9305733Z   NODE_VERSION: 22
+2025-07-06T15:39:02.9306563Z ##[endgroup]
+2025-07-06T15:39:03.1329545Z Downloading single artifact
+2025-07-06T15:39:03.4267457Z Preparing to download the following artifacts:
+2025-07-06T15:39:03.4271563Z - frontend-image (ID: 3472435211, Size: 21272194, Expected Digest: sha256:6417ab4040e9041c3e777f6eb2b5c7d3239f4653726922b38155ba2b0b5ba99f)
+2025-07-06T15:39:03.6196907Z Redirecting to blob download url: https://productionresultssa4.blob.core.windows.net/actions-results/2e417717-7d4e-4012-920d-8215e006d03f/workflow-job-run-0e23b443-517e-5823-b388-a7e949a08d5b/artifacts/297a9e5877948685565a10e26dae884f4ec65064b97301931f7c42eff2a69e79.zip
+2025-07-06T15:39:03.6202687Z Starting download of artifact to: /tmp
+2025-07-06T15:39:03.9643643Z (node:2055) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-07-06T15:39:03.9647907Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-07-06T15:39:05.7361898Z SHA256 digest of downloaded artifact is 6417ab4040e9041c3e777f6eb2b5c7d3239f4653726922b38155ba2b0b5ba99f
+2025-07-06T15:39:05.7363957Z Artifact download completed successfully.
+2025-07-06T15:39:05.7364992Z Total of 1 artifact(s) downloaded
+2025-07-06T15:39:05.7369638Z Download artifact has finished successfully
+2025-07-06T15:39:05.7565965Z ##[group]Run actions/download-artifact@v4
+2025-07-06T15:39:05.7566320Z with:
+2025-07-06T15:39:05.7566544Z   name: backend-image
+2025-07-06T15:39:05.7566769Z   path: /tmp
+2025-07-06T15:39:05.7566990Z   merge-multiple: false
+2025-07-06T15:39:05.7567295Z   repository: ***/secret-notes
+2025-07-06T15:39:05.7567541Z   run-id: 16100605116
+2025-07-06T15:39:05.7567764Z env:
+2025-07-06T15:39:05.7567994Z   IMAGE_NAME: ***/secret-notes
+2025-07-06T15:39:05.7568251Z   NODE_VERSION: 22
+2025-07-06T15:39:05.7568461Z ##[endgroup]
+2025-07-06T15:39:05.9492054Z Downloading single artifact
+2025-07-06T15:39:06.2476315Z Preparing to download the following artifacts:
+2025-07-06T15:39:06.2477474Z - backend-image (ID: 3472435280, Size: 233560011, Expected Digest: sha256:a9d9359bda292b8395992b1551e934c8ed5331588b98c35a52e6d010d83bc069)
+2025-07-06T15:39:06.4344016Z Redirecting to blob download url: https://productionresultssa4.blob.core.windows.net/actions-results/2e417717-7d4e-4012-920d-8215e006d03f/workflow-job-run-35ddfae4-2f56-5ae8-a4c1-303954af0f07/artifacts/e10a6370388bcbd112ca9afe696b78a7829f3696ccd87b9312147abc738f62c9.zip
+2025-07-06T15:39:06.4345452Z Starting download of artifact to: /tmp
+2025-07-06T15:39:06.7925991Z (node:2067) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-07-06T15:39:06.7927024Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-07-06T15:39:16.3839831Z SHA256 digest of downloaded artifact is a9d9359bda292b8395992b1551e934c8ed5331588b98c35a52e6d010d83bc069
+2025-07-06T15:39:16.3840660Z Artifact download completed successfully.
+2025-07-06T15:39:16.3841090Z Total of 1 artifact(s) downloaded
+2025-07-06T15:39:16.3848614Z Download artifact has finished successfully
+2025-07-06T15:39:16.3975271Z ##[group]Run docker load --input /tmp/frontend-image.tar
+2025-07-06T15:39:16.3975781Z [36;1mdocker load --input /tmp/frontend-image.tar[0m
+2025-07-06T15:39:16.3976152Z [36;1mdocker load --input /tmp/backend-image.tar[0m
+2025-07-06T15:39:16.4081326Z shell: /usr/bin/bash -e {0}
+2025-07-06T15:39:16.4081586Z env:
+2025-07-06T15:39:16.4081897Z   IMAGE_NAME: ***/secret-notes
+2025-07-06T15:39:16.4082141Z   NODE_VERSION: 22
+2025-07-06T15:39:16.4082341Z ##[endgroup]
+2025-07-06T15:39:17.6878882Z Loaded image: ***/secret-notes-frontend:latest
+2025-07-06T15:39:17.6885084Z Loaded image: ***/secret-notes-frontend:0.1.0
+2025-07-06T15:39:26.7408633Z Loaded image: ***/secret-notes-backend:latest
+2025-07-06T15:39:26.7412231Z Loaded image: ***/secret-notes-backend:0.1.0
+2025-07-06T15:39:26.7865452Z ##[group]Run docker/login-action@v3
+2025-07-06T15:39:26.7865742Z with:
+2025-07-06T15:39:26.7866022Z   username: ***
+2025-07-06T15:39:26.7866277Z   password: ***
+2025-07-06T15:39:26.7866463Z   ecr: auto
+2025-07-06T15:39:26.7866636Z   logout: true
+2025-07-06T15:39:26.7866829Z env:
+2025-07-06T15:39:26.7867025Z   IMAGE_NAME: ***/secret-notes
+2025-07-06T15:39:26.7867256Z   NODE_VERSION: 22
+2025-07-06T15:39:26.7867466Z ##[endgroup]
+2025-07-06T15:39:27.0727550Z Logging into Docker Hub...
+2025-07-06T15:39:27.8389135Z Login Succeeded!
+2025-07-06T15:39:27.8516572Z ##[group]Run docker push ***/secret-notes-frontend:latest
+2025-07-06T15:39:27.8517037Z [36;1mdocker push ***/secret-notes-frontend:latest[0m
+2025-07-06T15:39:27.8517404Z [36;1mdocker push ***/secret-notes-frontend:0.1.0[0m
+2025-07-06T15:39:27.8573936Z shell: /usr/bin/bash -e {0}
+2025-07-06T15:39:27.8574180Z env:
+2025-07-06T15:39:27.8574420Z   IMAGE_NAME: ***/secret-notes
+2025-07-06T15:39:27.8574654Z   NODE_VERSION: 22
+2025-07-06T15:39:27.8574849Z ##[endgroup]
+2025-07-06T15:39:27.8753046Z The push refers to repository [docker.io/***/secret-notes-frontend]
+2025-07-06T15:39:28.0945900Z 398584225cea: Preparing
+2025-07-06T15:39:28.0946348Z 32a9c951f708: Preparing
+2025-07-06T15:39:28.0946733Z 7e881413b635: Preparing
+2025-07-06T15:39:28.0947578Z 3db4ef8dec24: Preparing
+2025-07-06T15:39:28.0948086Z 2bfd71b953a3: Preparing
+2025-07-06T15:39:28.0948411Z b0debeaa68c5: Preparing
+2025-07-06T15:39:28.0948747Z 5f5a3d906b11: Preparing
+2025-07-06T15:39:28.0949083Z 9c2b6e6f2e2e: Preparing
+2025-07-06T15:39:28.0950153Z 4babb02c7c40: Preparing
+2025-07-06T15:39:28.0950566Z 08000c18d16d: Preparing
+2025-07-06T15:39:28.0950941Z b0debeaa68c5: Waiting
+2025-07-06T15:39:28.0951321Z 5f5a3d906b11: Waiting
+2025-07-06T15:39:28.0951671Z 9c2b6e6f2e2e: Waiting
+2025-07-06T15:39:28.0952045Z 4babb02c7c40: Waiting
+2025-07-06T15:39:28.0952385Z 08000c18d16d: Waiting
+2025-07-06T15:39:29.9965659Z 3db4ef8dec24: Pushed
+2025-07-06T15:39:30.0764565Z 2bfd71b953a3: Pushed
+2025-07-06T15:39:30.4953475Z 398584225cea: Pushed
+2025-07-06T15:39:30.6396374Z 32a9c951f708: Pushed
+2025-07-06T15:39:31.6587243Z b0debeaa68c5: Pushed
+2025-07-06T15:39:31.6694077Z 7e881413b635: Pushed
+2025-07-06T15:39:31.7092076Z 5f5a3d906b11: Pushed
+2025-07-06T15:39:32.1896078Z 9c2b6e6f2e2e: Pushed
+2025-07-06T15:39:32.7748026Z 4babb02c7c40: Pushed
+2025-07-06T15:39:33.9478802Z 08000c18d16d: Pushed
+2025-07-06T15:39:37.0023001Z latest: digest: sha256:c29ab1177c494791851b2bad91bd9d17ce20b9655f9b7478a05cb3554ad763bd size: 2406
+2025-07-06T15:39:37.0156236Z The push refers to repository [docker.io/***/secret-notes-frontend]
+2025-07-06T15:39:37.2375570Z 398584225cea: Preparing
+2025-07-06T15:39:37.2376081Z 32a9c951f708: Preparing
+2025-07-06T15:39:37.2376544Z 7e881413b635: Preparing
+2025-07-06T15:39:37.2377026Z 3db4ef8dec24: Preparing
+2025-07-06T15:39:37.2377466Z 2bfd71b953a3: Preparing
+2025-07-06T15:39:37.2377821Z b0debeaa68c5: Preparing
+2025-07-06T15:39:37.2378179Z 5f5a3d906b11: Preparing
+2025-07-06T15:39:37.2378532Z 9c2b6e6f2e2e: Preparing
+2025-07-06T15:39:37.2378880Z 4babb02c7c40: Preparing
+2025-07-06T15:39:37.2379238Z 08000c18d16d: Preparing
+2025-07-06T15:39:37.2379578Z 9c2b6e6f2e2e: Waiting
+2025-07-06T15:39:37.2379925Z b0debeaa68c5: Waiting
+2025-07-06T15:39:37.2380268Z 5f5a3d906b11: Waiting
+2025-07-06T15:39:37.2380622Z 4babb02c7c40: Waiting
+2025-07-06T15:39:37.2380947Z 08000c18d16d: Waiting
+2025-07-06T15:39:37.8232363Z 3db4ef8dec24: Layer already exists
+2025-07-06T15:39:37.8369146Z 2bfd71b953a3: Layer already exists
+2025-07-06T15:39:37.8807823Z 7e881413b635: Layer already exists
+2025-07-06T15:39:38.1013967Z 32a9c951f708: Layer already exists
+2025-07-06T15:39:38.1422280Z 398584225cea: Layer already exists
+2025-07-06T15:39:38.1758442Z b0debeaa68c5: Layer already exists
+2025-07-06T15:39:38.2026111Z 5f5a3d906b11: Layer already exists
+2025-07-06T15:39:38.2301935Z 9c2b6e6f2e2e: Layer already exists
+2025-07-06T15:39:38.4327606Z 4babb02c7c40: Layer already exists
+2025-07-06T15:39:38.4898744Z 08000c18d16d: Layer already exists
+2025-07-06T15:39:39.8424880Z 0.1.0: digest: sha256:c29ab1177c494791851b2bad91bd9d17ce20b9655f9b7478a05cb3554ad763bd size: 2406
+2025-07-06T15:39:39.8473366Z ##[group]Run docker push ***/secret-notes-backend:latest
+2025-07-06T15:39:39.8473829Z [36;1mdocker push ***/secret-notes-backend:latest[0m
+2025-07-06T15:39:39.8474205Z [36;1mdocker push ***/secret-notes-backend:0.1.0[0m
+2025-07-06T15:39:39.8530838Z shell: /usr/bin/bash -e {0}
+2025-07-06T15:39:39.8531092Z env:
+2025-07-06T15:39:39.8531339Z   IMAGE_NAME: ***/secret-notes
+2025-07-06T15:39:39.8531585Z   NODE_VERSION: 22
+2025-07-06T15:39:39.8531793Z ##[endgroup]
+2025-07-06T15:39:39.8724684Z The push refers to repository [docker.io/***/secret-notes-backend]
+2025-07-06T15:39:40.0924751Z df43c16ce0fe: Preparing
+2025-07-06T15:39:40.0925294Z 065c992c30a0: Preparing
+2025-07-06T15:39:40.0925747Z 94ce0b22074b: Preparing
+2025-07-06T15:39:40.0926185Z 321630f03bc8: Preparing
+2025-07-06T15:39:40.0927103Z 851c50a4ce37: Preparing
+2025-07-06T15:39:40.0927859Z 1f8a7f2c1ae7: Preparing
+2025-07-06T15:39:40.0928400Z bc25a8c84974: Preparing
+2025-07-06T15:39:40.0928852Z 625f0765efa8: Preparing
+2025-07-06T15:39:40.0929357Z b3c942954ba7: Preparing
+2025-07-06T15:39:40.0929794Z 08000c18d16d: Preparing
+2025-07-06T15:39:40.0930238Z bc25a8c84974: Waiting
+2025-07-06T15:39:40.0931075Z 625f0765efa8: Waiting
+2025-07-06T15:39:40.0931490Z b3c942954ba7: Waiting
+2025-07-06T15:39:40.0931875Z 08000c18d16d: Waiting
+2025-07-06T15:39:40.0932238Z 1f8a7f2c1ae7: Waiting
+2025-07-06T15:39:42.3925695Z 851c50a4ce37: Pushed
+2025-07-06T15:39:42.4217542Z 94ce0b22074b: Pushed
+2025-07-06T15:39:42.8162986Z 065c992c30a0: Pushed
+2025-07-06T15:39:44.1188968Z bc25a8c84974: Pushed
+2025-07-06T15:39:44.5419649Z 1f8a7f2c1ae7: Pushed
+2025-07-06T15:39:44.7951544Z 625f0765efa8: Pushed
+2025-07-06T15:39:44.8810962Z 08000c18d16d: Layer already exists
+2025-07-06T15:39:45.5394997Z df43c16ce0fe: Pushed
+2025-07-06T15:39:52.7064003Z b3c942954ba7: Pushed
+2025-07-06T15:39:56.4954902Z 321630f03bc8: Pushed
+2025-07-06T15:39:59.6708182Z latest: digest: sha256:6f5322a7198a99b9513b5e7bc069d7442db1eafeafef100de2857352d4dc382a size: 2414
+2025-07-06T15:39:59.6863411Z The push refers to repository [docker.io/***/secret-notes-backend]
+2025-07-06T15:39:59.9030934Z df43c16ce0fe: Preparing
+2025-07-06T15:39:59.9031382Z 065c992c30a0: Preparing
+2025-07-06T15:39:59.9031795Z 94ce0b22074b: Preparing
+2025-07-06T15:39:59.9032159Z 321630f03bc8: Preparing
+2025-07-06T15:39:59.9032552Z 851c50a4ce37: Preparing
+2025-07-06T15:39:59.9032957Z 1f8a7f2c1ae7: Preparing
+2025-07-06T15:39:59.9033565Z bc25a8c84974: Preparing
+2025-07-06T15:39:59.9033947Z 625f0765efa8: Preparing
+2025-07-06T15:39:59.9034289Z b3c942954ba7: Preparing
+2025-07-06T15:39:59.9034518Z 08000c18d16d: Preparing
+2025-07-06T15:39:59.9034741Z 625f0765efa8: Waiting
+2025-07-06T15:39:59.9035082Z b3c942954ba7: Waiting
+2025-07-06T15:39:59.9035311Z 08000c18d16d: Waiting
+2025-07-06T15:39:59.9035536Z 1f8a7f2c1ae7: Waiting
+2025-07-06T15:39:59.9035853Z bc25a8c84974: Waiting
+2025-07-06T15:40:00.7418446Z 94ce0b22074b: Layer already exists
+2025-07-06T15:40:00.7439231Z 851c50a4ce37: Layer already exists
+2025-07-06T15:40:00.7464713Z 065c992c30a0: Layer already exists
+2025-07-06T15:40:00.7770052Z 321630f03bc8: Layer already exists
+2025-07-06T15:40:00.8013835Z df43c16ce0fe: Layer already exists
+2025-07-06T15:40:01.1114954Z bc25a8c84974: Layer already exists
+2025-07-06T15:40:01.1166981Z b3c942954ba7: Layer already exists
+2025-07-06T15:40:01.1707012Z 625f0765efa8: Layer already exists
+2025-07-06T15:40:01.2763671Z 08000c18d16d: Layer already exists
+2025-07-06T15:40:01.3479650Z 1f8a7f2c1ae7: Layer already exists
+2025-07-06T15:40:02.9226534Z 0.1.0: digest: sha256:6f5322a7198a99b9513b5e7bc069d7442db1eafeafef100de2857352d4dc382a size: 2414
+2025-07-06T15:40:02.9282630Z Post job cleanup.
+2025-07-06T15:40:03.2212000Z [command]/usr/bin/docker logout 
+2025-07-06T15:40:03.2340862Z Removing login credentials for https://index.docker.io/v1/
+2025-07-06T15:40:03.2376366Z ##[group]Post cache
+2025-07-06T15:40:03.2376771Z State not set
+2025-07-06T15:40:03.2377450Z ##[endgroup]
+2025-07-06T15:40:03.2495375Z Cleaning up orphan processes

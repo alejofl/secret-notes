@@ -1,0 +1,1174 @@
+Branch indexing
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/caches/git-33d79cbd53736d2fc46fcc1a2aa586b4/.git # timeout=10
+Setting origin to https://github.com/alejofl/secret-notes/
+ > git config remote.origin.url https://github.com/alejofl/secret-notes/ # timeout=10
+Fetching origin...
+Fetching upstream changes from origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git config --get remote.origin.url # timeout=10
+ > git fetch --tags --force --progress -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/deploy
+Seen branch in repository origin/master
+Seen 2 remote branches
+Obtained services/jenkins/Jenkinsfile.deploy from af90d09f9cd38e1eb4770b99910b09da09f0b6cb
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/alejofl/secret-notes/ # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/alejofl/secret-notes/
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --no-tags --force --progress -- https://github.com/alejofl/secret-notes/ +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision af90d09f9cd38e1eb4770b99910b09da09f0b6cb (deploy)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f af90d09f9cd38e1eb4770b99910b09da09f0b6cb # timeout=10
+Commit message: "ci: Fix performance tests run"
+ > git rev-list --no-walk ef03fb6315cd6bf3881de08656687be909c24a64 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withCredentials
+Masking supported pattern matches of $VITE_API_BASE_URL or $REMOTE_HOST or $VITE_PUBLIC_POSTHOG_KEY or $VITE_PUBLIC_POSTHOG_HOST
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Preparation)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/alejofl/secret-notes/ # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/alejofl/secret-notes/
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --no-tags --force --progress -- https://github.com/alejofl/secret-notes/ +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision af90d09f9cd38e1eb4770b99910b09da09f0b6cb (deploy)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f af90d09f9cd38e1eb4770b99910b09da09f0b6cb # timeout=10
+Commit message: "ci: Fix performance tests run"
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ grep "version" package.json
++ sed s/.*"version": "\(.*\)".*/\1/
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] echo
+App Version: 0.1.0
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Linting)
+[Pipeline] parallel
+[Pipeline] { (Branch: Static Code Analysis (SonarQube))
+[Pipeline] { (Branch: Security Scan (Snyk))
+[Pipeline] stage
+[Pipeline] { (Static Code Analysis (SonarQube))
+[Pipeline] stage
+[Pipeline] { (Security Scan (Snyk))
+[Pipeline] tool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] snykSecurity
+Testing project...
+> /var/lib/jenkins/tools/io.snyk.jenkins.tools.SnykInstallation/SnykScanner/snyk-linux test --json --severity-threshold=low
+[Pipeline] tool
+[Pipeline] withSonarQubeEnv
+Injecting SonarQube environment variables using the configuration: SonarScanner
+[Pipeline] {
+[Pipeline] sh
++ /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarScanner/bin/sonar-scanner
+23:55:34.253 INFO  Scanner configuration file: /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarScanner/conf/sonar-scanner.properties
+23:55:34.263 INFO  Project root configuration file: /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/sonar-project.properties
+23:55:34.303 INFO  SonarScanner CLI 7.1.0.4889
+23:55:34.308 INFO  Java 17.0.15 Ubuntu (64-bit)
+23:55:34.313 INFO  Linux 6.8.0-1031-aws amd64
+23:55:34.396 INFO  User cache: /var/lib/jenkins/.sonar/cache
+23:55:36.605 INFO  Communicating with SonarQube Server 9.9.8.100196
+23:55:37.640 INFO  Load global settings
+23:55:37.767 INFO  Load global settings (done) | time=127ms
+23:55:37.773 INFO  Server id: 147B411E-AZfVl-OsOpBHfWEka8kX
+23:55:37.796 INFO  User cache: /var/lib/jenkins/.sonar/cache
+23:55:37.810 INFO  Load/download plugins
+23:55:37.812 INFO  Load plugins index
+23:55:37.964 INFO  Load plugins index (done) | time=153ms
+23:55:38.174 INFO  Load/download plugins (done) | time=364ms
+Generating report...
+> /var/lib/jenkins/tools/io.snyk.jenkins.tools.SnykInstallation/SnykScanner/snyk-to-html-linux -i /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/2025-07-05T23-55-33-310907813Z_snyk_report.json
+Archiving artifacts
+Monitoring project...
+> /var/lib/jenkins/tools/io.snyk.jenkins.tools.SnykInstallation/SnykScanner/snyk-linux monitor --severity-threshold=low
+23:55:39.298 INFO  Process project properties
+23:55:39.300 INFO  Process project properties (done) | time=2ms
+23:55:39.304 INFO  Execute project builders
+23:55:39.307 INFO  Execute project builders (done) | time=3ms
+23:55:39.312 INFO  Project key: secret-notes
+23:55:39.313 INFO  Base dir: /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy
+23:55:39.313 INFO  Working dir: /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork
+23:55:39.328 INFO  Load project settings for component key: 'secret-notes'
+23:55:39.388 INFO  Load project settings for component key: 'secret-notes' (done) | time=60ms
+23:55:39.859 INFO  Auto-configuring with CI 'Jenkins'
+23:55:39.873 INFO  Load quality profiles
+23:55:40.021 INFO  Load quality profiles (done) | time=149ms
+23:55:40.030 INFO  Load active rules
+
+Monitoring /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy (@alejofl/secret-notes)...
+
+Explore this snapshot at https://app.snyk.io/org/alejofl/project/60b2eefe-9911-4868-bf8f-2115a13e2c40/history/9f005c61-1505-4bef-9cbd-3f3b57ceff08
+
+Tip: Detected multiple supported manifests (2), use --all-projects to scan all of them at once.
+
+Notifications about newly disclosed issues related to these dependencies will be emailed to you.
+
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+23:55:45.445 INFO  Load active rules (done) | time=5415ms
+23:55:45.462 INFO  Load analysis cache
+23:55:45.508 INFO  Load analysis cache | time=46ms
+23:55:45.699 INFO  Load project repositories
+23:55:45.759 INFO  Load project repositories (done) | time=60ms
+23:55:45.920 INFO  Indexing files...
+23:55:45.923 INFO  Project configuration:
+23:55:51.185 INFO  90 files indexed
+23:55:51.187 INFO  27225 files ignored because of scm ignore settings
+23:55:51.191 INFO  Quality profile for css: Sonar way
+23:55:51.191 INFO  Quality profile for js: Sonar way
+23:55:51.191 INFO  Quality profile for json: Sonar way
+23:55:51.191 INFO  Quality profile for ts: Sonar way
+23:55:51.191 INFO  Quality profile for web: Sonar way
+23:55:51.191 INFO  Quality profile for yaml: Sonar way
+23:55:51.191 INFO  ------------- Run sensors on module secret-notes
+23:55:51.349 INFO  Load metrics repository
+23:55:51.439 INFO  Load metrics repository (done) | time=91ms
+23:55:53.584 INFO  Sensor JaCoCo XML Report Importer [jacoco]
+23:55:53.585 INFO  'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+23:55:53.586 INFO  No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+23:55:53.587 INFO  Sensor JaCoCo XML Report Importer [jacoco] (done) | time=3ms
+23:55:53.587 INFO  Sensor IaC CloudFormation Sensor [iac]
+23:55:53.807 INFO  0 source files to be analyzed
+23:55:53.866 INFO  0/0 source files have been analyzed
+23:55:53.866 INFO  Sensor IaC CloudFormation Sensor [iac] (done) | time=279ms
+23:55:53.867 INFO  Sensor IaC Kubernetes Sensor [iac]
+23:55:53.948 INFO  0 source files to be analyzed
+23:55:54.034 INFO  0/0 source files have been analyzed
+23:55:54.034 INFO  Sensor IaC Kubernetes Sensor [iac] (done) | time=168ms
+23:55:54.035 INFO  Sensor JavaScript analysis [javascript]
+23:55:58.339 WARN  Node.js version 22 is not recommended, you might experience issues. Please use a recommended version of Node.js [16, 18]
+23:55:58.359 INFO  2 source files to be analyzed
+23:56:00.883 INFO  2/2 source files have been analyzed
+23:56:00.884 INFO  Hit the cache for 0 out of 2
+23:56:00.885 INFO  Miss the cache for 2 out of 2: ANALYSIS_MODE_INELIGIBLE [2/2]
+23:56:00.886 INFO  Sensor JavaScript analysis [javascript] (done) | time=6851ms
+23:56:00.886 INFO  Sensor TypeScript analysis [javascript]
+23:56:00.938 INFO  Found 2 tsconfig.json file(s): [/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/frontend/tsconfig.json, /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/backend/tsconfig.json]
+23:56:00.939 INFO  50 source files to be analyzed
+23:56:00.940 INFO  Creating TypeScript program
+23:56:00.941 INFO  TypeScript configuration file /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/frontend/tsconfig.json
+23:56:00.969 ERROR Error: Argument for '--moduleResolution' option must be: 'node', 'classic', 'node16', 'nodenext'.; Unknown compiler option 'allowImportingTsExtensions'.; Unknown compiler option 'verbatimModuleSyntax'.; Unknown compiler option 'noUncheckedSideEffectImports'.
+23:56:00.969 ERROR     at createProgramOptions (/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/lib/services/program/program.js:106:15)
+23:56:00.969 ERROR     at createProgram (/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/lib/services/program/program.js:132:28)
+23:56:00.969 ERROR     at default_1 (/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/lib/routing/on-create-program.js:10:57)
+23:56:00.969 ERROR     at Layer.handle [as handle_request] (/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/layer.js:95:5)
+23:56:00.969 ERROR     at next (/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/route.js:144:13)
+23:56:00.969 ERROR     at Route.dispatch (/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/route.js:114:3)
+23:56:00.969 ERROR     at Layer.handle [as handle_request] (/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/layer.js:95:5)
+23:56:00.969 ERROR     at /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/index.js:284:15
+23:56:00.969 ERROR     at Function.process_params (/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/index.js:346:12)
+23:56:00.969 ERROR     at next (/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/.scannerwork/.sonartmp/eslint-bridge-bundle/package/node_modules/express/lib/router/index.js:280:10)
+23:56:00.972 ERROR Failed to create program: Argument for '--moduleResolution' option must be: 'node', 'classic', 'node16', 'nodenext'.; Unknown compiler option 'allowImportingTsExtensions'.; Unknown compiler option 'verbatimModuleSyntax'.; Unknown compiler option 'noUncheckedSideEffectImports'.
+23:56:00.972 INFO  Creating TypeScript program (done) | time=32ms
+23:56:00.972 INFO  Creating TypeScript program
+23:56:00.972 INFO  TypeScript configuration file /var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/backend/tsconfig.json
+23:56:02.782 INFO  Creating TypeScript program (done) | time=1810ms
+23:56:02.783 INFO  Starting analysis with current program
+23:56:04.635 INFO  Analyzed 3 file(s) with current program
+23:56:04.642 INFO  Skipped 47 file(s) because they were not part of any tsconfig.json (enable debug logs to see the full list)
+23:56:04.643 INFO  50/50 source files have been analyzed
+23:56:04.644 INFO  Hit the cache for 0 out of 3
+23:56:04.644 INFO  Miss the cache for 3 out of 3: ANALYSIS_MODE_INELIGIBLE [3/3]
+23:56:04.644 INFO  Sensor TypeScript analysis [javascript] (done) | time=3758ms
+23:56:04.644 INFO  Sensor JavaScript inside YAML analysis [javascript]
+23:56:04.648 INFO  No input files found for analysis
+23:56:04.649 INFO  Hit the cache for 0 out of 0
+23:56:04.649 INFO  Miss the cache for 0 out of 0
+23:56:04.649 INFO  Sensor JavaScript inside YAML analysis [javascript] (done) | time=5ms
+23:56:04.650 INFO  Sensor CSS Rules [javascript]
+23:56:04.661 INFO  3 source files to be analyzed
+23:56:05.215 INFO  3/3 source files have been analyzed
+23:56:05.215 INFO  Hit the cache for 0 out of 0
+23:56:05.215 INFO  Miss the cache for 0 out of 0
+23:56:05.215 INFO  Sensor CSS Rules [javascript] (done) | time=566ms
+23:56:05.215 INFO  Sensor CSS Metrics [javascript]
+23:56:05.526 INFO  Sensor CSS Metrics [javascript] (done) | time=311ms
+23:56:05.526 INFO  Sensor C# Project Type Information [csharp]
+23:56:05.527 INFO  Sensor C# Project Type Information [csharp] (done) | time=1ms
+23:56:05.530 INFO  Sensor C# Analysis Log [csharp]
+23:56:05.545 INFO  Sensor C# Analysis Log [csharp] (done) | time=15ms
+23:56:05.545 INFO  Sensor C# Properties [csharp]
+23:56:05.545 INFO  Sensor C# Properties [csharp] (done) | time=0ms
+23:56:05.546 INFO  Sensor HTML [web]
+23:56:05.577 INFO  Sensor HTML [web] (done) | time=31ms
+23:56:05.577 INFO  Sensor TextAndSecretsSensor [text]
+23:56:05.589 INFO  68 source files to be analyzed
+23:56:05.987 INFO  68/68 source files have been analyzed
+23:56:05.988 INFO  Sensor TextAndSecretsSensor [text] (done) | time=411ms
+23:56:05.988 INFO  Sensor VB.NET Project Type Information [vbnet]
+23:56:05.989 INFO  Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+23:56:05.992 INFO  Sensor VB.NET Analysis Log [vbnet]
+23:56:06.012 INFO  Sensor VB.NET Analysis Log [vbnet] (done) | time=20ms
+23:56:06.013 INFO  Sensor VB.NET Properties [vbnet]
+23:56:06.013 INFO  Sensor VB.NET Properties [vbnet] (done) | time=0ms
+23:56:06.013 INFO  Sensor IaC Docker Sensor [iac]
+23:56:06.022 INFO  2 source files to be analyzed
+23:56:06.252 INFO  2/2 source files have been analyzed
+23:56:06.252 INFO  Sensor IaC Docker Sensor [iac] (done) | time=239ms
+23:56:06.265 INFO  ------------- Run sensors on project
+23:56:06.349 INFO  Sensor Analysis Warnings import [csharp]
+23:56:06.350 INFO  Sensor Analysis Warnings import [csharp] (done) | time=1ms
+23:56:06.350 INFO  Sensor Zero Coverage Sensor
+23:56:06.361 INFO  Sensor Zero Coverage Sensor (done) | time=11ms
+23:56:06.386 INFO  CPD Executor 1 file had no CPD blocks
+23:56:06.390 INFO  CPD Executor Calculating CPD for 5 files
+23:56:06.404 INFO  CPD Executor CPD calculation finished (done) | time=14ms
+23:56:06.588 INFO  Analysis report generated in 177ms, dir size=331.5 kB
+23:56:06.671 INFO  Analysis report compressed in 82ms, zip size=109.6 kB
+23:56:06.807 INFO  Analysis report uploaded in 135ms
+23:56:06.811 INFO  ANALYSIS SUCCESSFUL, you can find the results at: http://localhost:9999/dashboard?id=secret-notes
+23:56:06.811 INFO  Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+23:56:06.811 INFO  More about the report processing at http://localhost:9999/api/ce/task?id=AZfdBMTLuvm9nzARHCqJ
+23:56:07.624 INFO  Analysis total time: 29.238 s
+23:56:07.627 INFO  EXECUTION SUCCESS
+23:56:07.628 INFO  Total time: 33.487s
+[Pipeline] }
+[Pipeline] // withSonarQubeEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Unit Testing)
+[Pipeline] parallel
+[Pipeline] { (Branch: Backend Unit Testing)
+[Pipeline] { (Branch: Frontend Unit Testing)
+[Pipeline] stage
+[Pipeline] { (Backend Unit Testing)
+[Pipeline] stage
+[Pipeline] { (Frontend Unit Testing)
+[Pipeline] tool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[Pipeline] sh
++ cd backend
++ npm install
++ cd frontend
++ npm install
+
+up to date, audited 844 packages in 9s
+
+210 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
++ npm run test
+
+> @alejofl/secret-notes-backend@0.1.0 test
+> dotenv -e .env -- jest --coverage
+
+
+up to date, audited 844 packages in 9s
+
+210 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
++ npm run test
+
+> @alejofl/secret-notes-frontend@0.1.0 test
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv3.2.4 [39m[90m/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy/frontend[39m
+
+ [32m✓[39m src/components/notes/protection-card.spec.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 205[2mms[22m[39m
+ [32m✓[39m src/components/not-found.spec.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+PASS src/services/crypto.spec.ts
+  crypto service
+    ✓ should encrypt and decrypt text correctly (254 ms)
+    ✓ should return a Buffer of correct length after encryption (121 ms)
+    ✓ should produce different ciphertexts for same input (random salt/iv) (237 ms)
+    ✓ should throw if decrypting with wrong passphrase (301 ms)
+    ✓ should throw if encrypted data is tampered (tag) (338 ms)
+    ✓ should throw if encrypted data is tampered (ciphertext) (277 ms)
+    ✓ should throw if encrypted data is too short (115 ms)
+    ✓ should handle empty string encryption/decryption (251 ms)
+    ✓ should handle unicode characters (236 ms)
+    ✓ should handle long text (258 ms)
+    ✓ should not mutate input buffers (275 ms)
+    ✓ should throw if auth tag is missing (237 ms)
+
+-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |     100 |      100 |     100 |     100 |                   
+ crypto.ts |     100 |      100 |     100 |     100 |                   
+-----------|---------|----------|---------|---------|-------------------
+Test Suites: 1 passed, 1 total
+Tests:       12 passed, 12 total
+Snapshots:   0 total
+Time:        3.9 s, estimated 10 s
+Ran all test suites.
++ cd ..
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+ [32m✓[39m src/components/error.spec.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 64[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m15 passed[39m[22m[90m (15)[39m
+[2m   Start at [22m 23:56:20
+[2m   Duration [22m 5.36s[2m (transform 289ms, setup 0ms, collect 1.51s, tests 359ms, environment 2.13s, prepare 549ms)[22m
+
++ cd ..
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] parallel
+[Pipeline] { (Branch: Frontend Build)
+[Pipeline] { (Branch: Backend Build)
+[Pipeline] stage
+[Pipeline] { (Frontend Build)
+[Pipeline] stage
+[Pipeline] { (Backend Build)
+[Pipeline] tool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[Pipeline] sh
++ docker build -t alejofl/secret-notes-frontend:latest --build-arg VITE_API_BASE_URL=**** --build-arg VITE_PUBLIC_POSTHOG_KEY=**** --build-arg VITE_PUBLIC_POSTHOG_HOST=**** frontend
++ docker build -t alejofl/secret-notes-backend:latest backend
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 587B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:1.28-alpine
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/node:22.17.0-alpine3.21
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 256B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22.17.0-alpine3.21
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 82B done
+#3 DONE 0.0s
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 101B done
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/node:22.17.0-alpine3.21@sha256:a7c10fad0b8fa59578bf3cd1717b168df134db8362b89e1ea6f54676fee49d3b
+#5 DONE 0.0s
+
+#6 [stage-1 1/3] FROM docker.io/library/nginx:1.28-alpine@sha256:aed99734248e851764f1f2146835ecad42b5f994081fa6631cc5d79240891ec9
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 484.81kB 0.1s done
+
+#4 [1/7] FROM docker.io/library/node:22.17.0-alpine3.21@sha256:a7c10fad0b8fa59578bf3cd1717b168df134db8362b89e1ea6f54676fee49d3b
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 951B 0.0s done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /app
+#6 CACHED
+
+#7 [3/7] COPY package.json ./
+#7 CACHED
+
+#8 [4/7] RUN npm install
+#8 CACHED
+
+#9 [6/7] RUN npm run build
+#9 CACHED
+
+#10 [5/7] COPY . .
+#10 CACHED
+
+#11 [7/7] RUN npm run prisma:generate
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 writing image sha256:d1206180954e315cc3b48b00564b790b9aea4e07ed834521d2b7f70193724e87 done
+#12 naming to docker.io/alejofl/secret-notes-backend:latest done
+#12 DONE 0.0s
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+#7 DONE 0.1s
+
+#8 [2/7] WORKDIR /app
+#8 CACHED
+
+#9 [builder 3/6] COPY package.json ./
+#9 DONE 0.1s
+
+#10 [builder 4/6] RUN npm install
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+#10 41.96 
+#10 41.96 added 439 packages, and audited 440 packages in 41s
+#10 41.96 
+#10 41.96 152 packages are looking for funding
+#10 41.96   run `npm fund` for details
+#10 41.96 
+#10 41.96 found 0 vulnerabilities
+#10 41.96 npm notice
+#10 41.96 npm notice New major version of npm available! 10.9.2 -> 11.4.2
+#10 41.96 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+#10 41.96 npm notice To update run: npm install -g npm@11.4.2
+#10 41.96 npm notice
+#10 DONE 43.7s
+
+#11 [builder 5/6] COPY . .
+#11 DONE 0.1s
+
+#12 [builder 6/6] RUN npm run build
+#12 0.352 
+#12 0.352 > @alejofl/secret-notes-frontend@0.1.0 build
+#12 0.352 > vite build && tsc
+#12 0.352 
+#12 1.897 vite v6.3.5 building for production...
+#12 2.237 Generated route tree in 273ms
+#12 2.295 transforming...
+#12 11.02 ✓ 2243 modules transformed.
+#12 11.44 rendering chunks...
+#12 11.87 computing gzip size...
+#12 11.90 dist/index.html                    0.75 kB │ gzip:   0.42 kB
+#12 11.90 dist/assets/index-JJLnN_I1.css    81.78 kB │ gzip:  14.45 kB
+#12 11.90 dist/assets/index-Cf3vCjl2.js      0.34 kB │ gzip:   0.22 kB
+#12 11.90 dist/assets/_noteId-ocTIT8cM.js    1.80 kB │ gzip:   0.84 kB
+#12 11.90 dist/assets/new-7MnzZQgM.js       91.39 kB │ gzip:  25.80 kB
+#12 11.90 dist/assets/_noteId-bp44ASGB.js  160.92 kB │ gzip:  49.19 kB
+#12 11.90 dist/assets/index-CYp3HwE6.js    732.31 kB │ gzip: 237.72 kB
+#12 11.90 
+#12 11.90 (!) Some chunks are larger than 500 kB after minification. Consider:
+#12 11.90 - Using dynamic import() to code-split the application
+#12 11.90 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+#12 11.90 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+#12 11.91 ✓ built in 9.95s
+#12 DONE 21.3s
+
+#6 [stage-1 1/3] FROM docker.io/library/nginx:1.28-alpine@sha256:aed99734248e851764f1f2146835ecad42b5f994081fa6631cc5d79240891ec9
+#6 CACHED
+
+#13 [stage-1 2/3] COPY --from=builder /app/dist /usr/share/nginx/html
+#13 DONE 0.1s
+
+#14 [stage-1 3/3] COPY nginx.conf /etc/nginx/conf.d/default.conf
+#14 DONE 0.1s
+
+#15 exporting to image
+#15 exporting layers 0.1s done
+#15 writing image sha256:72b79608b84d53af0791d737b0df5784e9784426fd80ca65b00740606e71efdf done
+#15 naming to docker.io/alejofl/secret-notes-frontend:latest done
+#15 DONE 0.1s
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Delivery)
+[Pipeline] parallel
+[Pipeline] { (Branch: Frontend Delivery)
+[Pipeline] { (Branch: Backend Delivery)
+[Pipeline] stage
+[Pipeline] { (Frontend Delivery)
+[Pipeline] stage
+[Pipeline] { (Backend Delivery)
+[Pipeline] tool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withDockerRegistry
+$ docker login -u alejofl -p ******** https://registry.hub.docker.com
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+[Pipeline] withDockerRegistry
+$ docker login -u alejofl -p ******** https://registry.hub.docker.com
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+
+WARNING! Your credentials are stored unencrypted in '/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy@tmp/87d9c55a-8ddd-409e-92e5-9dc305b40792/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+[Pipeline] {
+
+WARNING! Your credentials are stored unencrypted in '/var/lib/jenkins/workspace/Notes_-_Test_Build_Deploy_deploy@tmp/15f153aa-2e5c-4c1e-946a-045a9ac1b272/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] {
+[Pipeline] sh
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker tag alejofl/secret-notes-frontend:latest registry.hub.docker.com/alejofl/secret-notes-frontend:0.1.0
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
++ docker tag alejofl/secret-notes-backend:latest registry.hub.docker.com/alejofl/secret-notes-backend:0.1.0
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[Pipeline] sh
++ docker push registry.hub.docker.com/alejofl/secret-notes-frontend:0.1.0
+The push refers to repository [registry.hub.docker.com/alejofl/secret-notes-frontend]
+00eddde2b4f7: Preparing
+6bf10aa8d3a9: Preparing
+7e881413b635: Preparing
+3db4ef8dec24: Preparing
+2bfd71b953a3: Preparing
+b0debeaa68c5: Preparing
+5f5a3d906b11: Preparing
+9c2b6e6f2e2e: Preparing
+4babb02c7c40: Preparing
+08000c18d16d: Preparing
+b0debeaa68c5: Waiting
+5f5a3d906b11: Waiting
+9c2b6e6f2e2e: Waiting
+4babb02c7c40: Waiting
+08000c18d16d: Waiting
+3db4ef8dec24: Layer already exists
+2bfd71b953a3: Layer already exists
+7e881413b635: Layer already exists
+5f5a3d906b11: Layer already exists
+9c2b6e6f2e2e: Layer already exists
+b0debeaa68c5: Layer already exists
+4babb02c7c40: Layer already exists
+08000c18d16d: Layer already exists
++ docker push registry.hub.docker.com/alejofl/secret-notes-backend:0.1.0
+The push refers to repository [registry.hub.docker.com/alejofl/secret-notes-backend]
+86082007b810: Preparing
+4b2a943092a3: Preparing
+822dd973b0d5: Preparing
+7fafa509f122: Preparing
+313c7d26d82d: Preparing
+9bdefd0164aa: Preparing
+bc25a8c84974: Preparing
+625f0765efa8: Preparing
+b3c942954ba7: Preparing
+08000c18d16d: Preparing
+4b2a943092a3: Waiting
+822dd973b0d5: Waiting
+7fafa509f122: Waiting
+313c7d26d82d: Waiting
+9bdefd0164aa: Waiting
+bc25a8c84974: Waiting
+625f0765efa8: Waiting
+b3c942954ba7: Waiting
+08000c18d16d: Waiting
+86082007b810: Waiting
+4b2a943092a3: Layer already exists
+822dd973b0d5: Layer already exists
+86082007b810: Layer already exists
+7fafa509f122: Layer already exists
+313c7d26d82d: Layer already exists
+9bdefd0164aa: Layer already exists
+bc25a8c84974: Layer already exists
+b3c942954ba7: Layer already exists
+625f0765efa8: Layer already exists
+08000c18d16d: Layer already exists
+0.1.0: digest: sha256:ca975814f3f443f11e3086872ed1daff992d7372a393606f7ae9c1055cc6994c size: 2414
+[Pipeline] }
+[Pipeline] // withEnv
+00eddde2b4f7: Pushed
+6bf10aa8d3a9: Pushed
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker tag alejofl/secret-notes-backend:latest registry.hub.docker.com/alejofl/secret-notes-backend:latest
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker push registry.hub.docker.com/alejofl/secret-notes-backend:latest
+The push refers to repository [registry.hub.docker.com/alejofl/secret-notes-backend]
+86082007b810: Preparing
+4b2a943092a3: Preparing
+822dd973b0d5: Preparing
+7fafa509f122: Preparing
+313c7d26d82d: Preparing
+9bdefd0164aa: Preparing
+bc25a8c84974: Preparing
+625f0765efa8: Preparing
+b3c942954ba7: Preparing
+08000c18d16d: Preparing
+9bdefd0164aa: Waiting
+bc25a8c84974: Waiting
+625f0765efa8: Waiting
+b3c942954ba7: Waiting
+08000c18d16d: Waiting
+313c7d26d82d: Layer already exists
+822dd973b0d5: Layer already exists
+7fafa509f122: Layer already exists
+4b2a943092a3: Layer already exists
+86082007b810: Layer already exists
+9bdefd0164aa: Layer already exists
+bc25a8c84974: Layer already exists
+625f0765efa8: Layer already exists
+08000c18d16d: Layer already exists
+b3c942954ba7: Layer already exists
+latest: digest: sha256:ca975814f3f443f11e3086872ed1daff992d7372a393606f7ae9c1055cc6994c size: 2414
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withDockerRegistry
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+0.1.0: digest: sha256:85c7962c6a92f2017618c0ed401b930189952b2b18d6ca9d7ea817d630166423 size: 2406
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker tag alejofl/secret-notes-frontend:latest registry.hub.docker.com/alejofl/secret-notes-frontend:latest
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker push registry.hub.docker.com/alejofl/secret-notes-frontend:latest
+The push refers to repository [registry.hub.docker.com/alejofl/secret-notes-frontend]
+00eddde2b4f7: Preparing
+6bf10aa8d3a9: Preparing
+7e881413b635: Preparing
+3db4ef8dec24: Preparing
+2bfd71b953a3: Preparing
+b0debeaa68c5: Preparing
+5f5a3d906b11: Preparing
+9c2b6e6f2e2e: Preparing
+4babb02c7c40: Preparing
+08000c18d16d: Preparing
+b0debeaa68c5: Waiting
+5f5a3d906b11: Waiting
+9c2b6e6f2e2e: Waiting
+4babb02c7c40: Waiting
+08000c18d16d: Waiting
+6bf10aa8d3a9: Layer already exists
+3db4ef8dec24: Layer already exists
+2bfd71b953a3: Layer already exists
+7e881413b635: Layer already exists
+00eddde2b4f7: Layer already exists
+5f5a3d906b11: Layer already exists
+b0debeaa68c5: Layer already exists
+9c2b6e6f2e2e: Layer already exists
+4babb02c7c40: Layer already exists
+08000c18d16d: Layer already exists
+latest: digest: sha256:85c7962c6a92f2017618c0ed401b930189952b2b18d6ca9d7ea817d630166423 size: 2406
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withDockerRegistry
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] withCredentials
+Masking supported pattern matches of $identity
+[Pipeline] {
+[Pipeline] sshCommand
+Executing command on ****[****]: cd app && ./start-blue-green.sh sudo: false
+ backend Pulling 
+ backend Pulled 
+ Container app-backend-1  Stopping
+ Container app-backend-1  Stopped
+ Container app-migrations-1  Starting
+ Container app-migrations-1  Started
+ Container app-migrations-1  Waiting
+ Container app-migrations-1  Exited
+ Container app-backend-1  Starting
+ Container app-backend-1  Started
+ frontend_blue Pulling 
+ f18232174bc9 Already exists 
+ dde65f7af9d6 Already exists 
+ 532a23145349 Already exists 
+ bbdf43ac95df Already exists 
+ c544760e6514 Already exists 
+ 3cc2eb67bce9 Already exists 
+ 19f9a172b25c Already exists 
+ e57f9eaa9ba5 Already exists 
+ f86e16149655 Pulling fs layer 
+ 2903adf13649 Pulling fs layer 
+ f86e16149655 Downloading [==>                                                ]  16.38kB/343.5kB
+ 2903adf13649 Downloading [==================================================>]     298B/298B
+ 2903adf13649 Verifying Checksum 
+ 2903adf13649 Download complete 
+ f86e16149655 Verifying Checksum 
+ f86e16149655 Download complete 
+ f86e16149655 Extracting [====>                                              ]  32.77kB/343.5kB
+ f86e16149655 Extracting [==================================================>]  343.5kB/343.5kB
+ f86e16149655 Extracting [==================================================>]  343.5kB/343.5kB
+ f86e16149655 Pull complete 
+ 2903adf13649 Extracting [==================================================>]     298B/298B
+ 2903adf13649 Extracting [==================================================>]     298B/298B
+ 2903adf13649 Pull complete 
+ frontend_blue Pulled 
+ Container app-backend-1  Running
+ Container app-frontend_blue-1  Recreate
+ Container app-frontend_blue-1  Recreated
+ Container app-migrations-1  Starting
+ Container app-migrations-1  Started
+ Container app-migrations-1  Waiting
+ Container app-migrations-1  Exited
+ Container app-backend-1  Waiting
+ Container app-backend-1  Healthy
+ Container app-frontend_blue-1  Starting
+ Container app-frontend_blue-1  Started
+5000
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [REMOTE_HOST]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ cd frontend
++ npm install
+
+up to date, audited 844 packages in 2s
+
+210 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
++ TESTS_URL=http://****:5000 npm run e2e
+
+> @alejofl/secret-notes-frontend@0.1.0 e2e
+> npx playwright install && npx playwright test
+
+
+Running 63 tests using 1 worker
+······°··°°°°°°°···········°··°°°°°°°···········°··°°°°°°°·····
+  24 skipped
+  39 passed (45.1s)
++ cd ..
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [REMOTE_HOST]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ cd frontend
++ TESTS_URL=http://****:5000 npm run performance
+
+> @alejofl/secret-notes-frontend@0.1.0 performance
+> docker run --rm -e TESTS_URL --volume ${PWD}/tests/performance:/tests --workdir /tests grafana/k6 run k6.ts
+
+Unable to find image 'grafana/k6:latest' locally
+latest: Pulling from grafana/k6
+fe07684b16b8: Pulling fs layer
+79d84bb82298: Pulling fs layer
+ba9a3fe9518d: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4f4fb700ef54: Waiting
+fe07684b16b8: Verifying Checksum
+fe07684b16b8: Download complete
+79d84bb82298: Verifying Checksum
+79d84bb82298: Download complete
+4f4fb700ef54: Verifying Checksum
+4f4fb700ef54: Download complete
+fe07684b16b8: Pull complete
+79d84bb82298: Pull complete
+ba9a3fe9518d: Verifying Checksum
+ba9a3fe9518d: Download complete
+ba9a3fe9518d: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:b1625f686ef1c733340b00de57bce840e0b4b1f7e545c58305a5db53e7ad3797
+Status: Downloaded newer image for grafana/k6:latest
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: k6.ts
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 1200 max VUs, 1m0s max duration (incl. graceful stop):
+              * default: 1200 looping VUs for 30s (gracefulStop: 30s)
+
+
+running (0m00.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [   2% ] 1200 VUs  00.6s/30s
+
+running (0m01.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [   5% ] 1200 VUs  01.6s/30s
+
+running (0m02.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [   9% ] 1200 VUs  02.6s/30s
+
+running (0m03.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [  12% ] 1200 VUs  03.6s/30s
+
+running (0m04.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [  15% ] 1200 VUs  04.6s/30s
+
+running (0m05.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [  19% ] 1200 VUs  05.6s/30s
+
+running (0m06.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [  22% ] 1200 VUs  06.6s/30s
+
+running (0m07.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [  25% ] 1200 VUs  07.6s/30s
+
+running (0m08.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [  29% ] 1200 VUs  08.6s/30s
+
+running (0m09.6s), 1200/1200 VUs, 0 complete and 0 interrupted iterations
+default   [  32% ] 1200 VUs  09.6s/30s
+
+running (0m10.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  35% ] 1200 VUs  10.6s/30s
+
+running (0m11.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  39% ] 1200 VUs  11.6s/30s
+
+running (0m12.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  42% ] 1200 VUs  12.6s/30s
+
+running (0m13.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  45% ] 1200 VUs  13.6s/30s
+
+running (0m14.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  49% ] 1200 VUs  14.6s/30s
+
+running (0m15.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  52% ] 1200 VUs  15.6s/30s
+
+running (0m16.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  55% ] 1200 VUs  16.6s/30s
+
+running (0m17.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  59% ] 1200 VUs  17.6s/30s
+
+running (0m18.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  62% ] 1200 VUs  18.6s/30s
+
+running (0m19.6s), 1200/1200 VUs, 1200 complete and 0 interrupted iterations
+default   [  65% ] 1200 VUs  19.6s/30s
+
+running (0m20.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  69% ] 1200 VUs  20.6s/30s
+
+running (0m21.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  72% ] 1200 VUs  21.6s/30s
+
+running (0m22.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  75% ] 1200 VUs  22.6s/30s
+
+running (0m23.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  79% ] 1200 VUs  23.6s/30s
+
+running (0m24.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  82% ] 1200 VUs  24.6s/30s
+
+running (0m25.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  85% ] 1200 VUs  25.6s/30s
+
+running (0m26.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  89% ] 1200 VUs  26.6s/30s
+
+running (0m27.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  92% ] 1200 VUs  27.6s/30s
+
+running (0m28.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  95% ] 1200 VUs  28.6s/30s
+
+running (0m29.6s), 1200/1200 VUs, 2400 complete and 0 interrupted iterations
+default   [  99% ] 1200 VUs  29.6s/30s
+
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✓ 'rate<0.1' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 3600    118.405169/s
+    checks_succeeded...................: 100.00% 3600 out of 3600
+    checks_failed......................: 0.00%   0 out of 3600
+
+    ✓ status is 2xx
+
+    HTTP
+    http_req_duration.......................................................: avg=49.62ms min=276.11µs med=36.73ms max=234.31ms p(90)=126.59ms p(95)=165.27ms
+      { expected_response:true }............................................: avg=49.62ms min=276.11µs med=36.73ms max=234.31ms p(90)=126.59ms p(95)=165.27ms
+    http_req_failed.........................................................: 0.00%  0 out of 3600
+    http_reqs...............................................................: 3600   118.405169/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=10.07s  min=10s      med=10.03s  max=10.31s   p(90)=10.22s   p(95)=10.26s  
+    iterations..............................................................: 3600   118.405169/s
+    vus.....................................................................: 1200   min=1200      max=1200
+    vus_max.................................................................: 1200   min=1200      max=1200
+
+    NETWORK
+    data_received...........................................................: 3.6 MB 117 kB/s
+    data_sent...............................................................: 256 kB 8.4 kB/s
+
+
+
+
+running (0m30.4s), 0000/1200 VUs, 3600 complete and 0 interrupted iterations
+default ✓ [ 100% ] 1200 VUs  30s
++ cd ..
+[Pipeline] script
+[Pipeline] {
+[Pipeline] withCredentials
+Masking supported pattern matches of $identity
+[Pipeline] {
+[Pipeline] sshCommand
+Executing command on ****[****]: cd app && ./switch-blue-green.sh sudo: false
+2025/07/05 23:59:14 [notice] 23#23: signal process started
+ Container app-frontend_green-1  Stopping
+ Container app-frontend_green-1  Stopped
+Going to remove app-frontend_green-1
+ Container app-frontend_green-1  Removing
+ Container app-frontend_green-1  Removed
+Deleted Images:
+untagged: alejofl/secret-notes-frontend@sha256:d92f42b3184cd1cfced1829004b16ba661be3e62ca59cc64d599146d01feaa80
+deleted: sha256:3e566e89aa52a95921caa5855e85f0adc82ad83d2d545e2204fe716b8e83fa0e
+untagged: alejofl/secret-notes-frontend@sha256:64204c3ad01db0c82810b2bc918c9918f4c6552e52ea00a7430a09a92c2144b5
+deleted: sha256:4294044a56b67efe088399a00d671795e3c4cb3c223b444ffd230baf146e6a59
+deleted: sha256:cd10fbccb09cd3dea5baa9cbe3dbc3a5ce4fc8cdc667347a6ccb948511c8c85c
+untagged: alejofl/secret-notes-frontend@sha256:c9bffb8f96d6ef76c87dad57dc745adfe80acb237c02cbdbf12e8425dbb0e426
+deleted: sha256:e8907e452928effa6ddbb6e868b7689bc61c91491ce35ab56513e0f7026bfdce
+deleted: sha256:dd66b87a352090881590005fe867016a2b306e5e2009ff64234de5592bd9a3a8
+untagged: alejofl/secret-notes-frontend@sha256:5db23404f4dba227d5f5fa18fd088a4271675f14e841d282d10d8a8ad17c170d
+deleted: sha256:f6f319d3bf8cdbe2d4b55d0ee048c669a569ce6e8abc892eed1fda4d5c7adf79
+deleted: sha256:ca9911105e7abd000996bfe7d3f12345bdddbfe94deba73c6604da3edca4f21c
+untagged: alejofl/secret-notes-frontend@sha256:ff4ce96e8e9f93f5ff102166c7444f275677dfd390bf4f4120cc458a2413d6ad
+deleted: sha256:d044a18dbf502371fae2caf49e976747ec7eaaeed834467032e6d6188c880a4f
+deleted: sha256:4e133cef60b01dc6a2c9af3ce20a44cbd55b6c88bee3ec0b80aa7f4b572c7345
+deleted: sha256:98ae2e09241016e24d80db662df2f9907e1de843c798c069c98ea95fb492f880
+untagged: alejofl/secret-notes-frontend@sha256:37f1264bc361ac81f9d547e4726c9f2986a36a27438827c6bbb4a3c713fb0108
+deleted: sha256:abe56943b6fea36926655557c5f57f5fe01957c7fcac5d54588b2b6310c56470
+deleted: sha256:f096bb830e338d843c18c7b22825847d1d7f7f0282684a8efe2d0ccaf9cd0f18
+
+Total reclaimed space: 4.401MB
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Cleanup)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker image prune -a -f
+Deleted Images:
+untagged: registry.hub.docker.com/alejofl/secret-notes-frontend@sha256:ff4ce96e8e9f93f5ff102166c7444f275677dfd390bf4f4120cc458a2413d6ad
+deleted: sha256:d044a18dbf502371fae2caf49e976747ec7eaaeed834467032e6d6188c880a4f
+untagged: alejofl/secret-notes-backend:latest
+untagged: registry.hub.docker.com/alejofl/secret-notes-backend:0.1.0
+untagged: registry.hub.docker.com/alejofl/secret-notes-backend:latest
+untagged: registry.hub.docker.com/alejofl/secret-notes-backend@sha256:ca975814f3f443f11e3086872ed1daff992d7372a393606f7ae9c1055cc6994c
+deleted: sha256:d1206180954e315cc3b48b00564b790b9aea4e07ed834521d2b7f70193724e87
+untagged: registry.hub.docker.com/alejofl/secret-notes-frontend@sha256:5db23404f4dba227d5f5fa18fd088a4271675f14e841d282d10d8a8ad17c170d
+deleted: sha256:f6f319d3bf8cdbe2d4b55d0ee048c669a569ce6e8abc892eed1fda4d5c7adf79
+untagged: alejofl/secret-notes-frontend:latest
+untagged: registry.hub.docker.com/alejofl/secret-notes-frontend:0.1.0
+untagged: registry.hub.docker.com/alejofl/secret-notes-frontend:latest
+untagged: registry.hub.docker.com/alejofl/secret-notes-frontend@sha256:85c7962c6a92f2017618c0ed401b930189952b2b18d6ca9d7ea817d630166423
+deleted: sha256:72b79608b84d53af0791d737b0df5784e9784426fd80ca65b00740606e71efdf
+untagged: grafana/k6:latest
+untagged: grafana/k6@sha256:b1625f686ef1c733340b00de57bce840e0b4b1f7e545c58305a5db53e7ad3797
+deleted: sha256:529bf12eafde3435d413a0a094943abcb2ebffe1aa90e107b5e6093443ff7218
+deleted: sha256:04370dd8a648bd561394e2e221e99a4b7a3b90b48ee263ebb2cf292fad98d76d
+deleted: sha256:313bf57efdb639f30676298b9396c25db43991ea008fb786197f7c19c721bbbd
+deleted: sha256:e871883552e88b81cee7d2afeb94e0370a1890d7da9d545f742c8fc6212ac542
+deleted: sha256:fd2758d7a50e2b78d275ee7d1c218489f2439084449d895fa17eede6c61ab2c4
+
+Total reclaimed space: 73.92MB
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

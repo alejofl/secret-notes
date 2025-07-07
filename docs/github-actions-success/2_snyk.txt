@@ -1,0 +1,205 @@
+﻿2025-07-06T17:34:47.7145995Z Current runner version: '2.325.0'
+2025-07-06T17:34:47.7169040Z ##[group]Runner Image Provisioner
+2025-07-06T17:34:47.7169971Z Hosted Compute Agent
+2025-07-06T17:34:47.7170559Z Version: 20250703.357
+2025-07-06T17:34:47.7171120Z Commit: 07daf62238a21140d93e045a38f3784d75c509e1
+2025-07-06T17:34:47.7171842Z Build Date: 2025-07-03T14:39:09Z
+2025-07-06T17:34:47.7172581Z ##[endgroup]
+2025-07-06T17:34:47.7173148Z ##[group]Operating System
+2025-07-06T17:34:47.7173749Z Ubuntu
+2025-07-06T17:34:47.7174200Z 24.04.2
+2025-07-06T17:34:47.7174652Z LTS
+2025-07-06T17:34:47.7175140Z ##[endgroup]
+2025-07-06T17:34:47.7175613Z ##[group]Runner Image
+2025-07-06T17:34:47.7176185Z Image: ubuntu-24.04
+2025-07-06T17:34:47.7176636Z Version: 20250622.1.0
+2025-07-06T17:34:47.7177687Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250622.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-06T17:34:47.7179174Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250622.1
+2025-07-06T17:34:47.7180177Z ##[endgroup]
+2025-07-06T17:34:47.7181254Z ##[group]GITHUB_TOKEN Permissions
+2025-07-06T17:34:47.7183282Z Contents: read
+2025-07-06T17:34:47.7183810Z Metadata: read
+2025-07-06T17:34:47.7184305Z Packages: read
+2025-07-06T17:34:47.7184943Z ##[endgroup]
+2025-07-06T17:34:47.7186889Z Secret source: Actions
+2025-07-06T17:34:47.7187649Z Prepare workflow directory
+2025-07-06T17:34:47.7588905Z Prepare all required actions
+2025-07-06T17:34:47.7626440Z Getting action download info
+2025-07-06T17:34:48.1901264Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-06T17:34:48.1903523Z Version: 4.2.2
+2025-07-06T17:34:48.1905544Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-06T17:34:48.1907876Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-06T17:34:48.1909155Z ##[endgroup]
+2025-07-06T17:34:48.2945289Z Download action repository 'snyk/actions@master' (SHA:28606799782bc8e809f4076e9f8293bc4212d05e)
+2025-07-06T17:34:49.1707490Z Complete job name: snyk
+2025-07-06T17:34:49.2261757Z ##[group]Pull down action image 'snyk/snyk:node'
+2025-07-06T17:34:49.2305374Z ##[command]/usr/bin/docker pull snyk/snyk:node
+2025-07-06T17:34:50.1927564Z node: Pulling from snyk/snyk
+2025-07-06T17:34:50.4034855Z c19952135643: Pulling fs layer
+2025-07-06T17:34:50.4036272Z 7bbf972c6c2f: Pulling fs layer
+2025-07-06T17:34:50.4037371Z 900e2c02f17f: Pulling fs layer
+2025-07-06T17:34:50.4039175Z abe9c1abe6f3: Pulling fs layer
+2025-07-06T17:34:50.4039859Z 8ce1b37249dd: Pulling fs layer
+2025-07-06T17:34:50.4040454Z 8ae6ed226934: Pulling fs layer
+2025-07-06T17:34:50.4041043Z 5471b55d22e8: Pulling fs layer
+2025-07-06T17:34:50.4041602Z dcf69e3ecc1c: Pulling fs layer
+2025-07-06T17:34:50.4041989Z be6ea677be9c: Pulling fs layer
+2025-07-06T17:34:50.4042603Z 309eb4eeb0a4: Pulling fs layer
+2025-07-06T17:34:50.4042954Z 25f0541e21b1: Pulling fs layer
+2025-07-06T17:34:50.4043282Z 4f4fb700ef54: Pulling fs layer
+2025-07-06T17:34:50.4043606Z dcf69e3ecc1c: Waiting
+2025-07-06T17:34:50.4044006Z abe9c1abe6f3: Waiting
+2025-07-06T17:34:50.4044303Z be6ea677be9c: Waiting
+2025-07-06T17:34:50.4044611Z 25f0541e21b1: Waiting
+2025-07-06T17:34:50.4044982Z 4f4fb700ef54: Waiting
+2025-07-06T17:34:50.4045382Z 309eb4eeb0a4: Waiting
+2025-07-06T17:34:50.4045799Z 8ce1b37249dd: Waiting
+2025-07-06T17:34:50.4046193Z 8ae6ed226934: Waiting
+2025-07-06T17:34:50.4046589Z 5471b55d22e8: Waiting
+2025-07-06T17:34:50.8933705Z 7bbf972c6c2f: Verifying Checksum
+2025-07-06T17:34:50.8935369Z 7bbf972c6c2f: Download complete
+2025-07-06T17:34:51.1351691Z 900e2c02f17f: Verifying Checksum
+2025-07-06T17:34:51.1353023Z 900e2c02f17f: Download complete
+2025-07-06T17:34:51.3089678Z c19952135643: Verifying Checksum
+2025-07-06T17:34:51.3090915Z c19952135643: Download complete
+2025-07-06T17:34:51.4335587Z 8ce1b37249dd: Verifying Checksum
+2025-07-06T17:34:51.4338374Z 8ce1b37249dd: Download complete
+2025-07-06T17:34:51.7901459Z 5471b55d22e8: Verifying Checksum
+2025-07-06T17:34:51.7902103Z 5471b55d22e8: Download complete
+2025-07-06T17:34:52.0441076Z 8ae6ed226934: Verifying Checksum
+2025-07-06T17:34:52.0757351Z 8ae6ed226934: Download complete
+2025-07-06T17:34:52.0757935Z dcf69e3ecc1c: Download complete
+2025-07-06T17:34:52.3255695Z be6ea677be9c: Verifying Checksum
+2025-07-06T17:34:52.3256244Z be6ea677be9c: Download complete
+2025-07-06T17:34:52.4511658Z 309eb4eeb0a4: Verifying Checksum
+2025-07-06T17:34:52.4512746Z 309eb4eeb0a4: Download complete
+2025-07-06T17:34:52.6348526Z abe9c1abe6f3: Verifying Checksum
+2025-07-06T17:34:52.6349169Z abe9c1abe6f3: Download complete
+2025-07-06T17:34:52.7176962Z 4f4fb700ef54: Download complete
+2025-07-06T17:34:53.1097261Z 25f0541e21b1: Verifying Checksum
+2025-07-06T17:34:53.1097783Z 25f0541e21b1: Download complete
+2025-07-06T17:34:53.1884618Z c19952135643: Pull complete
+2025-07-06T17:34:55.4471106Z 7bbf972c6c2f: Pull complete
+2025-07-06T17:34:57.8046330Z 900e2c02f17f: Pull complete
+2025-07-06T17:35:04.2702786Z abe9c1abe6f3: Pull complete
+2025-07-06T17:35:04.2905947Z 8ce1b37249dd: Pull complete
+2025-07-06T17:35:06.5062951Z 8ae6ed226934: Pull complete
+2025-07-06T17:35:06.5476572Z 5471b55d22e8: Pull complete
+2025-07-06T17:35:06.5655225Z dcf69e3ecc1c: Pull complete
+2025-07-06T17:35:06.5797642Z be6ea677be9c: Pull complete
+2025-07-06T17:35:06.5943297Z 309eb4eeb0a4: Pull complete
+2025-07-06T17:35:07.1455790Z 25f0541e21b1: Pull complete
+2025-07-06T17:35:07.1587020Z 4f4fb700ef54: Pull complete
+2025-07-06T17:35:07.1643456Z Digest: sha256:e7982b42b87ea945878e375937326cdae082a02273d4becd04206be49197e3cc
+2025-07-06T17:35:07.1673053Z Status: Downloaded newer image for snyk/snyk:node
+2025-07-06T17:35:07.1686653Z docker.io/snyk/snyk:node
+2025-07-06T17:35:07.1715657Z ##[endgroup]
+2025-07-06T17:35:07.1964064Z ##[group]Run actions/checkout@v4
+2025-07-06T17:35:07.1964592Z with:
+2025-07-06T17:35:07.1964782Z   repository: alejofl/secret-notes
+2025-07-06T17:35:07.1965169Z   token: ***
+2025-07-06T17:35:07.1965348Z   ssh-strict: true
+2025-07-06T17:35:07.1965518Z   ssh-user: git
+2025-07-06T17:35:07.1965704Z   persist-credentials: true
+2025-07-06T17:35:07.1965931Z   clean: true
+2025-07-06T17:35:07.1966118Z   sparse-checkout-cone-mode: true
+2025-07-06T17:35:07.1966347Z   fetch-depth: 1
+2025-07-06T17:35:07.1966515Z   fetch-tags: false
+2025-07-06T17:35:07.1966695Z   show-progress: true
+2025-07-06T17:35:07.1966874Z   lfs: false
+2025-07-06T17:35:07.1967026Z   submodules: false
+2025-07-06T17:35:07.1967205Z   set-safe-directory: true
+2025-07-06T17:35:07.1967574Z env:
+2025-07-06T17:35:07.1967753Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T17:35:07.1967979Z   NODE_VERSION: 22
+2025-07-06T17:35:07.1968154Z ##[endgroup]
+2025-07-06T17:35:07.3045394Z Syncing repository: alejofl/secret-notes
+2025-07-06T17:35:07.3046832Z ##[group]Getting Git version info
+2025-07-06T17:35:07.3047234Z Working directory is '/home/runner/work/secret-notes/secret-notes'
+2025-07-06T17:35:07.3047782Z [command]/usr/bin/git version
+2025-07-06T17:35:07.3117437Z git version 2.49.0
+2025-07-06T17:35:07.3143888Z ##[endgroup]
+2025-07-06T17:35:07.3157947Z Temporarily overriding HOME='/home/runner/work/_temp/829063e5-0a6d-4716-af40-9ca6d354c9ea' before making global git config changes
+2025-07-06T17:35:07.3158873Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-06T17:35:07.3170618Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secret-notes/secret-notes
+2025-07-06T17:35:07.3206892Z Deleting the contents of '/home/runner/work/secret-notes/secret-notes'
+2025-07-06T17:35:07.3210493Z ##[group]Initializing the repository
+2025-07-06T17:35:07.3214737Z [command]/usr/bin/git init /home/runner/work/secret-notes/secret-notes
+2025-07-06T17:35:07.3313423Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-06T17:35:07.3314425Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-06T17:35:07.3315146Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-06T17:35:07.3315507Z hint:
+2025-07-06T17:35:07.3315797Z hint: 	git config --global init.defaultBranch <name>
+2025-07-06T17:35:07.3316464Z hint:
+2025-07-06T17:35:07.3316742Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-06T17:35:07.3317223Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-06T17:35:07.3317586Z hint:
+2025-07-06T17:35:07.3317775Z hint: 	git branch -m <name>
+2025-07-06T17:35:07.3319365Z Initialized empty Git repository in /home/runner/work/secret-notes/secret-notes/.git/
+2025-07-06T17:35:07.3331176Z [command]/usr/bin/git remote add origin https://github.com/alejofl/secret-notes
+2025-07-06T17:35:07.3363900Z ##[endgroup]
+2025-07-06T17:35:07.3364297Z ##[group]Disabling automatic garbage collection
+2025-07-06T17:35:07.3368370Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-06T17:35:07.3395556Z ##[endgroup]
+2025-07-06T17:35:07.3395880Z ##[group]Setting up auth
+2025-07-06T17:35:07.3402741Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-06T17:35:07.3430910Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-06T17:35:07.3759067Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-06T17:35:07.3788418Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-06T17:35:07.4007145Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-06T17:35:07.4041200Z ##[endgroup]
+2025-07-06T17:35:07.4041575Z ##[group]Fetching the repository
+2025-07-06T17:35:07.4058583Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5c7117118caa7cdb2ddf3cb08673cc488c287676:refs/remotes/origin/deploy
+2025-07-06T17:35:08.1057648Z From https://github.com/alejofl/secret-notes
+2025-07-06T17:35:08.1059915Z  * [new ref]         5c7117118caa7cdb2ddf3cb08673cc488c287676 -> origin/deploy
+2025-07-06T17:35:08.1083684Z ##[endgroup]
+2025-07-06T17:35:08.1084282Z ##[group]Determining the checkout info
+2025-07-06T17:35:08.1086891Z ##[endgroup]
+2025-07-06T17:35:08.1092019Z [command]/usr/bin/git sparse-checkout disable
+2025-07-06T17:35:08.1134286Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-06T17:35:08.1161452Z ##[group]Checking out the ref
+2025-07-06T17:35:08.1165938Z [command]/usr/bin/git checkout --progress --force -B deploy refs/remotes/origin/deploy
+2025-07-06T17:35:08.1282824Z Switched to a new branch 'deploy'
+2025-07-06T17:35:08.1285614Z branch 'deploy' set up to track 'origin/deploy'.
+2025-07-06T17:35:08.1290952Z ##[endgroup]
+2025-07-06T17:35:08.1324048Z [command]/usr/bin/git log -1 --format=%H
+2025-07-06T17:35:08.1345426Z 5c7117118caa7cdb2ddf3cb08673cc488c287676
+2025-07-06T17:35:08.1517540Z ##[group]Run snyk/actions/node@master
+2025-07-06T17:35:08.1517825Z with:
+2025-07-06T17:35:08.1517986Z   command: test
+2025-07-06T17:35:08.1518149Z   json: false
+2025-07-06T17:35:08.1518303Z env:
+2025-07-06T17:35:08.1518471Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T17:35:08.1518698Z   NODE_VERSION: 22
+2025-07-06T17:35:08.1519013Z   SNYK_TOKEN: ***
+2025-07-06T17:35:08.1519378Z ##[endgroup]
+2025-07-06T17:35:08.1622065Z ##[command]/usr/bin/docker run --name snyksnyknode_e718da --label bb48d2 --workdir /github/workspace --rm -e "IMAGE_NAME" -e "NODE_VERSION" -e "SNYK_TOKEN" -e "INPUT_COMMAND" -e "INPUT_ARGS" -e "INPUT_JSON" -e "FORCE_COLOR" -e "SNYK_INTEGRATION_NAME" -e "SNYK_INTEGRATION_VERSION" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/secret-notes/secret-notes":"/github/workspace" snyk/snyk:node  "snyk" "test" ""
+2025-07-06T17:35:10.6083224Z [1m[37m[39m[22m
+2025-07-06T17:35:10.6083878Z [1m[37mTesting /github/workspace...[39m[22m
+2025-07-06T17:35:10.6084363Z [1m[37m[39m[22m
+2025-07-06T17:35:10.6084796Z [1m[37m[39m[22m[1mOrganization:      [22malejofl
+2025-07-06T17:35:10.6085313Z [1mPackage manager:   [22mnpm
+2025-07-06T17:35:10.6085791Z [1mTarget file:       [22mpackage-lock.json
+2025-07-06T17:35:10.6086239Z [1mProject name:      [22m@alejofl/secret-notes
+2025-07-06T17:35:10.6086549Z [1mOpen source:       [22mno
+2025-07-06T17:35:10.6086834Z [1mProject path:      [22m/github/workspace
+2025-07-06T17:35:10.6087164Z [1mLicenses:          [22m[32menabled[39m
+2025-07-06T17:35:10.6087349Z 
+2025-07-06T17:35:10.6087863Z [32m✔ Tested /github/workspace for known issues, no vulnerable paths found.[39m
+2025-07-06T17:35:10.6088205Z 
+2025-07-06T17:35:10.6088507Z Tip: Detected multiple supported manifests (2), use --all-projects to scan all of them at once.
+2025-07-06T17:35:10.6088892Z 
+2025-07-06T17:35:10.6088895Z 
+2025-07-06T17:35:11.7815247Z Post job cleanup.
+2025-07-06T17:35:11.8773119Z [command]/usr/bin/git version
+2025-07-06T17:35:11.8810646Z git version 2.49.0
+2025-07-06T17:35:11.8855763Z Temporarily overriding HOME='/home/runner/work/_temp/c6d2a955-5a6e-4ff8-85f0-eadb138e542a' before making global git config changes
+2025-07-06T17:35:11.8857044Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-06T17:35:11.8862489Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secret-notes/secret-notes
+2025-07-06T17:35:11.8899207Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-06T17:35:11.8933274Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-06T17:35:11.9198332Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-06T17:35:11.9220070Z http.https://github.com/.extraheader
+2025-07-06T17:35:11.9233503Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-06T17:35:11.9264079Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-06T17:35:11.9590497Z Cleaning up orphan processes

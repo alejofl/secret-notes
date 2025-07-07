@@ -1,0 +1,196 @@
+﻿2025-07-06T15:37:38.3216507Z Current runner version: '2.325.0'
+2025-07-06T15:37:38.3248462Z ##[group]Runner Image Provisioner
+2025-07-06T15:37:38.3249777Z Hosted Compute Agent
+2025-07-06T15:37:38.3250623Z Version: 20250620.352
+2025-07-06T15:37:38.3251662Z Commit: f262f3aba23b10ea191b2a62bdee1ca4c3d344da
+2025-07-06T15:37:38.3253013Z Build Date: 2025-06-20T19:27:17Z
+2025-07-06T15:37:38.3253975Z ##[endgroup]
+2025-07-06T15:37:38.3254900Z ##[group]Operating System
+2025-07-06T15:37:38.3255801Z Ubuntu
+2025-07-06T15:37:38.3256543Z 24.04.2
+2025-07-06T15:37:38.3257242Z LTS
+2025-07-06T15:37:38.3258076Z ##[endgroup]
+2025-07-06T15:37:38.3258820Z ##[group]Runner Image
+2025-07-06T15:37:38.3259796Z Image: ubuntu-24.04
+2025-07-06T15:37:38.3260603Z Version: 20250622.1.0
+2025-07-06T15:37:38.3262296Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250622.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-06T15:37:38.3265162Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250622.1
+2025-07-06T15:37:38.3266791Z ##[endgroup]
+2025-07-06T15:37:38.3268616Z ##[group]GITHUB_TOKEN Permissions
+2025-07-06T15:37:38.3271075Z Contents: read
+2025-07-06T15:37:38.3271994Z Metadata: read
+2025-07-06T15:37:38.3273038Z Packages: read
+2025-07-06T15:37:38.3273864Z ##[endgroup]
+2025-07-06T15:37:38.3277058Z Secret source: Actions
+2025-07-06T15:37:38.3278196Z Prepare workflow directory
+2025-07-06T15:37:38.3817662Z Prepare all required actions
+2025-07-06T15:37:38.3872203Z Getting action download info
+2025-07-06T15:37:38.6409405Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-06T15:37:38.6410481Z Version: 4.2.2
+2025-07-06T15:37:38.6411579Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-06T15:37:38.6413020Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-06T15:37:38.6413695Z ##[endgroup]
+2025-07-06T15:37:38.7286622Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-07-06T15:37:38.7287384Z Version: 4.4.0
+2025-07-06T15:37:38.7288144Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-07-06T15:37:38.7289144Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-07-06T15:37:38.7289826Z ##[endgroup]
+2025-07-06T15:37:38.8927817Z Complete job name: backend-unit-testing
+2025-07-06T15:37:38.9575589Z ##[group]Run actions/checkout@v4
+2025-07-06T15:37:38.9576431Z with:
+2025-07-06T15:37:38.9576831Z   repository: alejofl/secret-notes
+2025-07-06T15:37:38.9577495Z   token: ***
+2025-07-06T15:37:38.9577874Z   ssh-strict: true
+2025-07-06T15:37:38.9578265Z   ssh-user: git
+2025-07-06T15:37:38.9578659Z   persist-credentials: true
+2025-07-06T15:37:38.9579100Z   clean: true
+2025-07-06T15:37:38.9579492Z   sparse-checkout-cone-mode: true
+2025-07-06T15:37:38.9579961Z   fetch-depth: 1
+2025-07-06T15:37:38.9580349Z   fetch-tags: false
+2025-07-06T15:37:38.9580732Z   show-progress: true
+2025-07-06T15:37:38.9581128Z   lfs: false
+2025-07-06T15:37:38.9581494Z   submodules: false
+2025-07-06T15:37:38.9581893Z   set-safe-directory: true
+2025-07-06T15:37:38.9582766Z env:
+2025-07-06T15:37:38.9583178Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T15:37:38.9583651Z   NODE_VERSION: 22
+2025-07-06T15:37:38.9584041Z ##[endgroup]
+2025-07-06T15:37:39.0663542Z Syncing repository: alejofl/secret-notes
+2025-07-06T15:37:39.0665513Z ##[group]Getting Git version info
+2025-07-06T15:37:39.0666250Z Working directory is '/home/runner/work/secret-notes/secret-notes'
+2025-07-06T15:37:39.0667308Z [command]/usr/bin/git version
+2025-07-06T15:37:39.0717633Z git version 2.49.0
+2025-07-06T15:37:39.0744795Z ##[endgroup]
+2025-07-06T15:37:39.0759132Z Temporarily overriding HOME='/home/runner/work/_temp/be587383-13cc-4b9b-b034-ff46d3b46179' before making global git config changes
+2025-07-06T15:37:39.0761333Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-06T15:37:39.0771698Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secret-notes/secret-notes
+2025-07-06T15:37:39.0806985Z Deleting the contents of '/home/runner/work/secret-notes/secret-notes'
+2025-07-06T15:37:39.0810614Z ##[group]Initializing the repository
+2025-07-06T15:37:39.0814699Z [command]/usr/bin/git init /home/runner/work/secret-notes/secret-notes
+2025-07-06T15:37:39.0882465Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-06T15:37:39.0884277Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-06T15:37:39.0885832Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-06T15:37:39.0886966Z hint:
+2025-07-06T15:37:39.0887701Z hint: 	git config --global init.defaultBranch <name>
+2025-07-06T15:37:39.0888623Z hint:
+2025-07-06T15:37:39.0889416Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-06T15:37:39.0890331Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-06T15:37:39.0891041Z hint:
+2025-07-06T15:37:39.0891461Z hint: 	git branch -m <name>
+2025-07-06T15:37:39.0892258Z Initialized empty Git repository in /home/runner/work/secret-notes/secret-notes/.git/
+2025-07-06T15:37:39.0898978Z [command]/usr/bin/git remote add origin https://github.com/alejofl/secret-notes
+2025-07-06T15:37:39.0931108Z ##[endgroup]
+2025-07-06T15:37:39.0931957Z ##[group]Disabling automatic garbage collection
+2025-07-06T15:37:39.0935194Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-06T15:37:39.0963247Z ##[endgroup]
+2025-07-06T15:37:39.0964061Z ##[group]Setting up auth
+2025-07-06T15:37:39.0969566Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-06T15:37:39.0998280Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-06T15:37:39.1278896Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-06T15:37:39.1306970Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-06T15:37:39.1525371Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-06T15:37:39.1559756Z ##[endgroup]
+2025-07-06T15:37:39.1561072Z ##[group]Fetching the repository
+2025-07-06T15:37:39.1579871Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c95c124f62ab2d706f28e29ac0bd7c7d7649edeb:refs/remotes/origin/deploy
+2025-07-06T15:37:39.4672454Z From https://github.com/alejofl/secret-notes
+2025-07-06T15:37:39.4673949Z  * [new ref]         c95c124f62ab2d706f28e29ac0bd7c7d7649edeb -> origin/deploy
+2025-07-06T15:37:39.4697160Z ##[endgroup]
+2025-07-06T15:37:39.4697853Z ##[group]Determining the checkout info
+2025-07-06T15:37:39.4699319Z ##[endgroup]
+2025-07-06T15:37:39.4704660Z [command]/usr/bin/git sparse-checkout disable
+2025-07-06T15:37:39.4742181Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-06T15:37:39.4768187Z ##[group]Checking out the ref
+2025-07-06T15:37:39.4771734Z [command]/usr/bin/git checkout --progress --force -B deploy refs/remotes/origin/deploy
+2025-07-06T15:37:39.4875307Z Switched to a new branch 'deploy'
+2025-07-06T15:37:39.4877674Z branch 'deploy' set up to track 'origin/deploy'.
+2025-07-06T15:37:39.4883705Z ##[endgroup]
+2025-07-06T15:37:39.4917291Z [command]/usr/bin/git log -1 --format=%H
+2025-07-06T15:37:39.4938796Z c95c124f62ab2d706f28e29ac0bd7c7d7649edeb
+2025-07-06T15:37:39.5164385Z ##[group]Run actions/setup-node@v4
+2025-07-06T15:37:39.5164899Z with:
+2025-07-06T15:37:39.5165245Z   node-version: 22
+2025-07-06T15:37:39.5165621Z   cache: npm
+2025-07-06T15:37:39.5165973Z   always-auth: false
+2025-07-06T15:37:39.5166359Z   check-latest: false
+2025-07-06T15:37:39.5166875Z   token: ***
+2025-07-06T15:37:39.5167218Z env:
+2025-07-06T15:37:39.5167562Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T15:37:39.5168213Z   NODE_VERSION: 22
+2025-07-06T15:37:39.5168570Z ##[endgroup]
+2025-07-06T15:37:39.6925678Z Found in cache @ /opt/hostedtoolcache/node/22.16.0/x64
+2025-07-06T15:37:39.6931970Z ##[group]Environment details
+2025-07-06T15:37:40.0649724Z node: v22.16.0
+2025-07-06T15:37:40.0651066Z npm: 10.9.2
+2025-07-06T15:37:40.0651996Z yarn: 1.22.22
+2025-07-06T15:37:40.0654779Z ##[endgroup]
+2025-07-06T15:37:40.0677845Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+2025-07-06T15:37:40.1901529Z /home/runner/.npm
+2025-07-06T15:37:40.3357393Z Cache hit for: node-cache-Linux-x64-npm-9964a5d5b06a67d632b784f4d85814ebd779729535d0f32014821df86afb385e
+2025-07-06T15:37:40.6773795Z Received 53814631 of 53814631 (100.0%), 172.8 MBs/sec
+2025-07-06T15:37:40.6774676Z Cache Size: ~51 MB (53814631 B)
+2025-07-06T15:37:40.6802738Z [command]/usr/bin/tar -xf /home/runner/work/_temp/dd189781-c1da-4e65-a805-744ec328cdaa/cache.tzst -P -C /home/runner/work/secret-notes/secret-notes --use-compress-program unzstd
+2025-07-06T15:37:40.8444107Z Cache restored successfully
+2025-07-06T15:37:40.8562096Z Cache restored from key: node-cache-Linux-x64-npm-9964a5d5b06a67d632b784f4d85814ebd779729535d0f32014821df86afb385e
+2025-07-06T15:37:40.8726388Z ##[group]Run cd backend
+2025-07-06T15:37:40.8726751Z [36;1mcd backend[0m
+2025-07-06T15:37:40.8727014Z [36;1mnpm install[0m
+2025-07-06T15:37:40.8727264Z [36;1mnpm run test[0m
+2025-07-06T15:37:40.8836577Z shell: /usr/bin/bash -e {0}
+2025-07-06T15:37:40.8836882Z env:
+2025-07-06T15:37:40.8837116Z   IMAGE_NAME: alejofl/secret-notes
+2025-07-06T15:37:40.8837414Z   NODE_VERSION: 22
+2025-07-06T15:37:40.8837641Z ##[endgroup]
+2025-07-06T15:37:43.8139090Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-07-06T15:37:44.4968642Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-07-06T15:37:48.1207275Z 
+2025-07-06T15:37:48.1208054Z added 484 packages, and audited 486 packages in 7s
+2025-07-06T15:37:48.1208664Z 
+2025-07-06T15:37:48.1209090Z 69 packages are looking for funding
+2025-07-06T15:37:48.1210128Z   run `npm fund` for details
+2025-07-06T15:37:48.1217868Z 
+2025-07-06T15:37:48.1218370Z found 0 vulnerabilities
+2025-07-06T15:37:48.2911679Z 
+2025-07-06T15:37:48.2912501Z > @alejofl/secret-notes-backend@0.1.0 test
+2025-07-06T15:37:48.2913659Z > dotenv -e .env -- jest --coverage
+2025-07-06T15:37:48.2914056Z 
+2025-07-06T15:37:49.8198481Z PASS src/services/crypto.spec.ts
+2025-07-06T15:37:49.8202477Z   crypto service
+2025-07-06T15:37:49.8206420Z     ✓ should encrypt and decrypt text correctly (56 ms)
+2025-07-06T15:37:49.8209061Z     ✓ should return a Buffer of correct length after encryption (27 ms)
+2025-07-06T15:37:49.8210732Z     ✓ should produce different ciphertexts for same input (random salt/iv) (53 ms)
+2025-07-06T15:37:49.8211885Z     ✓ should throw if decrypting with wrong passphrase (55 ms)
+2025-07-06T15:37:49.8213162Z     ✓ should throw if encrypted data is tampered (tag) (53 ms)
+2025-07-06T15:37:49.8214281Z     ✓ should throw if encrypted data is tampered (ciphertext) (54 ms)
+2025-07-06T15:37:49.8215273Z     ✓ should throw if encrypted data is too short (27 ms)
+2025-07-06T15:37:49.8216234Z     ✓ should handle empty string encryption/decryption (53 ms)
+2025-07-06T15:37:49.8217113Z     ✓ should handle unicode characters (53 ms)
+2025-07-06T15:37:49.8217942Z     ✓ should handle long text (52 ms)
+2025-07-06T15:37:49.8218627Z     ✓ should not mutate input buffers (52 ms)
+2025-07-06T15:37:49.8219338Z     ✓ should throw if auth tag is missing (53 ms)
+2025-07-06T15:37:49.8220879Z 
+2025-07-06T15:37:49.8301835Z -----------|---------|----------|---------|---------|-------------------
+2025-07-06T15:37:49.8302984Z File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+2025-07-06T15:37:49.8303867Z -----------|---------|----------|---------|---------|-------------------
+2025-07-06T15:37:49.8308025Z All files  |     100 |      100 |     100 |     100 |                   
+2025-07-06T15:37:49.8309405Z  crypto.ts |     100 |      100 |     100 |     100 |                   
+2025-07-06T15:37:49.8310282Z -----------|---------|----------|---------|---------|-------------------
+2025-07-06T15:37:49.8395673Z Test Suites: 1 passed, 1 total
+2025-07-06T15:37:49.8396237Z Tests:       12 passed, 12 total
+2025-07-06T15:37:49.8396599Z Snapshots:   0 total
+2025-07-06T15:37:49.8396823Z Time:        1.155 s
+2025-07-06T15:37:49.8397069Z Ran all test suites.
+2025-07-06T15:37:49.8884157Z Post job cleanup.
+2025-07-06T15:37:50.0385333Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-9964a5d5b06a67d632b784f4d85814ebd779729535d0f32014821df86afb385e, not saving cache.
+2025-07-06T15:37:50.0583891Z Post job cleanup.
+2025-07-06T15:37:50.1508229Z [command]/usr/bin/git version
+2025-07-06T15:37:50.1544154Z git version 2.49.0
+2025-07-06T15:37:50.1586263Z Temporarily overriding HOME='/home/runner/work/_temp/8b587f6c-f2a8-440e-90ee-9d08e0e08a88' before making global git config changes
+2025-07-06T15:37:50.1587162Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-06T15:37:50.1591514Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/secret-notes/secret-notes
+2025-07-06T15:37:50.1631906Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-06T15:37:50.1663863Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-06T15:37:50.1884767Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-06T15:37:50.1905032Z http.https://github.com/.extraheader
+2025-07-06T15:37:50.1917720Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-06T15:37:50.1948533Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-06T15:37:50.2270221Z Cleaning up orphan processes
