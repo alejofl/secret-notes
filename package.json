@@ -1,6 +1,6 @@
 {
   "name": "@alejofl/secret-notes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A secure note-taking webapp for storing encrypted notes and retrieving them using a passphrase.",
   "scripts": {
     "start": "docker compose -f compose.yaml --env-file backend/.env --env-file frontend/.env up -d",
